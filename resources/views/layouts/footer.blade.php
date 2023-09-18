@@ -40,8 +40,8 @@
                     <img class="imageFooterLogo" src="{{ asset('assets/img/GrouLogo.svg') }}"
                         alt="{{ __('general.footer.logo_alt') }}" />
                     <div class="but-download-footer">
-                        <img src="{{ asset('assets/img/Mobile app store badge (2).svg') }}" alt="" />
-                        <img src="{{ asset('assets/img/Mobile app store badge (3).svg') }}" alt="" />
+                        <img src="{{ asset('assets/img/Mobile app store badge (2).svg') }}" alt=""   onclick='window.location.href="{{ get_setting('play_store_link') }}"'/>
+                        <img src="{{ asset('assets/img/Mobile app store badge (3).svg') }}" alt=""   onclick='window.location.href="{{ get_setting('app_store_link') }}"'/>
                     </div>
                 </div>
             </div>

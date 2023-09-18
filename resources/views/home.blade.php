@@ -1,5 +1,4 @@
 @extends('layouts.master')
-@section('title', config('app.name'))
 @section('content')
     <!-- --- Start Main -->
     <main id="Main">
@@ -159,7 +158,7 @@
 
 
 
-        @if(isset($landing_page_sliders) && !($landing_page_sliders->isEmpty()))
+        @if (isset($landing_page_sliders) && !$landing_page_sliders->isEmpty())
             <!-- --- Start Sec Silder 3D  -->
             <section class="bg-sildeRed" data-aos="zoom-in-up" data-aos-duration="1000">
                 <div class="swiper mySwiper">
@@ -390,7 +389,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <div class="content-massage">
                             <h4>{{ __('general.sec_massage.content') }}</h4>
-                            <a href="#">{{ __('general.sec_massage.become_partner') }}</a>
+                            <a href="{{ route('partner.index') }}">{{ __('general.sec_massage.become_partner') }}</a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6">

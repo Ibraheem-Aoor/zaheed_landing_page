@@ -1,5 +1,4 @@
 @extends('layouts.master')
-@section('title', config('app.name'))
 @section('content')
     <!-- --- Start Main -->
     <main id="">
