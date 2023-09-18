@@ -1,0 +1,484 @@
+@media(max-width:576px){
+    .sec-cover{
+        min-height: 900px !important;
+        overflow: hidden;
+      }
+      .image-cover-header{
+        height: 500px;
+        margin-top: 70px;
+      }
+      .man-cover{
+        position: absolute;
+        right: 20px !important; 
+        bottom:0px !important;
+        height: 450px !important;
+      }
+      .content-cover h2{
+       
+      font-size: 30px;
+
+      }
+      .content-cover p{
+  
+        width: 100%;
+
+      }
+      .flex-client-row{
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+        flex-wrap: wrap !important;
+      }
+      .card-client-row{
+        flex-basis: 33.33% !important;
+        margin: 10px 0px;
+      }
+      .card-client-row img{
+        width: 50%;
+        object-fit: contain !important;
+      }
+      .title-tst-center-work-step h4{
+        font-size: 30px;
+      }
+      .image-work-step{
+        position: relative;
+        width: 80%;
+        margin: 15px auto !important;
+      }
+      .flex-title-store-viewAll h4{
+        color:  #211E1E;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        
+      }
+      .flex-title-store-viewAll a{
+
+        font-size: 15px;
+    
+      }
+      .content-store h4{
+        font-size: 18px;
+      }
+      .content-store h6{
+        font-size: 15px;
+      }
+      .info-detalis-store span{
+        font-size: 13px;
+      }
+      .sec-get-app-donwload{
+        width: 100%;
+        padding: 30px;
+        height: 600px !important;
+        background: url(../img/lines.svg) no-repeat, #E11A2C;
+        margin: 50px 0px;
+        border-radius: 15px;
+        overflow: hidden;
+      
+      }
+      .image-download-body .imageBody{
+        width: 250px; 
+      }
+      .image-download-body2 .imageBody{
+        
+        width: 250px !important;
+        width: 100% !important;
+      }
+      .image-download-body{
+        position: absolute;
+        left: -10px;
+        top: 10% !important;
+        width: 250px !important;
+      }
+      .image-donwload-app{
+        width: 100%;
+        position: relative;
+        height: 500px !important;
+      }
+      .image-download-body2{
+        position: absolute;
+        top: 50px !important;
+        height: 300px;
+        width: 250px;
+        left: 70px;
+        z-index: 1;
+      }
+      .image-download-body2 .imageBody{
+        width: 250px !important;
+      }
+      .content-download-image h3{
+        font-size: 25px;
+      }
+      .content-download-image p{
+        width: 100%;
+      }
+      .title-massage h4{
+        font-size: 25px;
+      }
+      .Sec_Massage{
+        width: 100%;
+        padding: 30px;
+        min-height: 500px;
+        background: url(../img/massGroup.png) no-repeat, #E11A2C;
+        background-size: cover;
+        margin: 50px 0px;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .content-massage h4{
+        font-size: 25px;
+      }
+      .image-massage img{
+        display: none;
+      }
+      .content-contact-form h4{
+        font-size: 20px;
+      }
+      .content-contact-form p{
+        width: 100%;
+      }
+      .content-form-footer h2{
+        font-size: 20px;
+      }
+      /* .image-donwload-app{
+       display: none;
+      } */
+      .flex-but-download-sotre{
+        display: flex !important;
+        align-items: center !important;
+      }
+      .flex-but-download-sotre img:last-child{
+        margin: 0px 5px;
+      }
+      .footer{
+        background: #1C1919;
+        padding: 15px !important;
+      }
+      .advantages h3{
+        font-size: 22px;
+      }
+      .box-advantages h6{
+        font-size: 16px;
+      }
+      /* .flex-title-product{
+        display: ب !important;
+      } */
+      .arrow-action-product{
+        display: none;
+      }
+      .flex-title-product h4{
+        font-size: 18px;
+      }
+      .info-right-product{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end !important;
+      }
+      #msform {
+        width:100%;
+        
+      }
+      #progressbarAll li span{
+        font-size: 13px;
+      }
+     .flex-detalis-box-store{
+      display: block !important;
+     }
+    .customeRowDonwload{
+      width: 100%;
+      flex-direction:column-reverse !important;
+    }
+    .box-step-work{
+      display: block;
+    }
+}
+/* --------------- */
+@media(min-width:576px) and (max-width:767.98px){
+    .sec-cover{
+        min-height: 900px !important;
+        overflow: hidden;
+      }
+      .image-cover-header{
+        height: 500px;
+        margin-top: 95px;
+      }
+      .man-cover{
+        position: absolute;
+        right: 20px !important; 
+        bottom:0px !important;
+        height: 450px !important;
+      }
+      .content-cover h2{
+       
+      font-size: 30px;
+
+      }
+      .content-cover p{
+  
+        width: 100%;
+
+      }
+      .flex-client-row{
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+        flex-wrap: wrap !important;
+      }
+      .card-client-row{
+        flex-basis: 33.33% !important;
+        margin: 10px 0px;
+      }
+      .card-client-row img{
+        width: 50%;
+        object-fit: contain !important;
+      }
+      .title-tst-center-work-step h4{
+        font-size: 30px;
+      }
+      .image-work-step{
+        position: relative;
+        width: 60%;
+        margin: 15px auto !important;
+      }
+      .flex-title-store-viewAll h4{
+        color:  #211E1E;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        
+      }
+      .flex-title-store-viewAll a{
+
+        font-size: 15px;
+    
+      }
+      .content-store h4{
+        font-size: 18px;
+      }
+      .content-store h6{
+        font-size: 15px;
+      }
+      .info-detalis-store span{
+        font-size: 13px;
+      }
+      .sec-get-app-donwload{
+        width: 100%;
+        padding: 30px;
+        min-height: 1000px;
+        background: url(../img/lines.svg) no-repeat, #E11A2C;
+        margin: 50px 0px;
+        border-radius: 15px;
+        overflow: hidden;
+      
+      }
+      .image-download-body .imageBody{
+        
+        width: 300px;
+       
+      }
+      .image-download-body2 .imageBody{
+        height: 300px !important;
+        width: 100% !important;
+      }
+      .image-download-body{
+        position: absolute;
+        bottom: -100px !important;
+       
+      }
+      .image-donwload-app{
+        width: 100%;
+        position: relative;
+        height: 500px !important;
+      }
+      .image-download-body2{
+        position: absolute;
+         bottom:-100px !important;
+        height: 300px;
+        width: 300px;
+        left: 80px;
+        z-index: 1;
+      }
+      .content-download-image h3{
+        font-size: 25px;
+      }
+      .content-download-image p{
+        width: 100%;
+      }
+      .title-massage h4{
+        font-size: 25px;
+      }
+      .Sec_Massage{
+        width: 100%;
+        padding: 30px;
+        height: 500px;
+        background: url(../img/massGroup.png) no-repeat, #E11A2C;
+        background-size: cover;
+        margin: 50px 0px;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .image-massage img{
+        display: none;
+      }
+      .content-contact-form h4{
+        font-size: 25px;
+      }
+      .content-contact-form p{
+        width: 100%;
+      }
+      .advantages h3{
+        font-size: 22px;
+      }
+      .box-advantages h6{
+        font-size: 16px;
+      }
+      .flex-title-product{
+        display: block !important;
+      }
+      .flex-title-product h4{
+        font-size: 22px;
+      }
+      .info-right-product{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end !important;
+      }
+      #msform {
+        width:100%;
+        
+      }
+      .flex-detalis-box-store{
+        display: block !important;
+       }
+       .customeRowDonwload{
+        width: 100%;
+        flex-direction:column-reverse !important;
+      }
+}
+/* **************** */
+@media(min-width:768px) and (max-width:991.98px){
+  .sec-cover{
+    min-height: 1200px !important;
+    overflow: hidden;
+  }
+  .image-cover-header{
+    height: 800px;
+    margin-top: 65px;
+  }
+  .man-cover{
+    position: absolute;
+    right: 20px !important; 
+    bottom:0px !important;
+    height: 600px !important;
+  }
+  
+      .content-cover h2{
+       
+      font-size: 40px;
+
+      }
+      .content-cover p{
+  
+        width: 100%;
+
+      }
+      .flex-client-row{
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+        flex-wrap: wrap !important;
+      }
+      .card-client-row{
+        flex-basis: 33.33% !important;
+        margin: 10px 0px;
+      }
+      .image-work-step{
+        position: relative;
+        width: 60%;
+        margin: 15px auto !important;
+      }
+      .image-massage{
+        display: none;
+      }
+      .image-donwload-app{
+        display: none;
+      }
+}
+/* ----------- */
+@media(min-width:992px) and (max-width:1199.98px){
+  .sec-cover{
+    overflow: hidden;
+  }
+    .image-cover-header .man-cover{
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        height: 550px;
+       }
+       .content-cover h2{
+       
+        font-size: 45px;
+  
+        }
+        .content-cover p{
+    
+          width: 100%;
+  
+        }
+        .customeRowStep{
+            width: 50% !important;
+            margin: auto;
+        }
+        .customeRowStep2{
+            width: 50% !important;
+            margin: auto !important;
+        }
+        .customeAd{
+            width: 33% !important;
+        }
+        .customeAd h6{
+            width: 100%;
+        }
+        .image-download-body2{
+            position: absolute;
+            top: 170px;
+            height: 300px;
+            width: 300px;
+            left: 80px;
+            z-index: 1;
+          }
+          .imageChatOne{
+            position: absolute;
+            top: -30px;
+            right: -80px;
+            width: 80%;
+            height: 200px;
+            z-index: 2 !important;
+          }
+          .imageChatTow{
+            position: absolute;
+            top: -30px;
+            right: 100px;
+            width: 80%;
+            height: 200px;
+            z-index: 1 !important;
+          }
+          .Sec_Massage{
+            width: 100%;
+            padding: 30px;
+            min-height: 450px;
+           
+          }
+          .content-contact-form p{
+            width: 100%;
+          }
+          .headerPage{
+            height: 140px !important;
+          }
+          .d-flex{
+            position: absolute;
+            top: 70px;
+            right: 50px !important;
+          }
+}
