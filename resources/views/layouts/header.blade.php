@@ -13,8 +13,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"
-                            href="#sec-cover">{{ __('general.header.about') }}</a>
+                        <a class="nav-link" aria-current="page" href="#sec-cover">{{ __('general.header.about') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
@@ -44,7 +43,10 @@
                             @endif
                         </div>
                         <div class="but-app">
-                            <a href="#app">{{ __('general.header.getApp') }}</a>
+                            @php
+                                $app_link = getUserAgent() == 'Chrome' ? get_setting('play_store_link') : get_setting('app_store_link');
+                            @endphp
+                            <a href="{{ $app_link }}">{{ __('general.header.getApp') }}</a>
                         </div>
                     </div>
                 </form>

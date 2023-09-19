@@ -373,4 +373,8 @@ class Shop extends Model
     }
 
 
+    function getAddress() {
+        return  $this->city?->getTranslation('name') .' , ' . $this->district?->getTranslation('name');
+    }
+
 }

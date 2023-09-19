@@ -35,7 +35,7 @@
         <!-- --- End Sec-Cover -->
 
         <!-- --- Start Sec-Client -->
-        <section class="sec-client" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+        {{-- <section class="sec-client" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container">
                 <div class="flex-client-row">
                     <div class="card-client-row">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- --- End Sec_Client -->
 
         <!-- --- Start Sec-App-Works -->
@@ -77,21 +77,45 @@
                         <div class="image-work-step">
                             <img src="{{ asset('assets/img/body.png') }}" class="body-image" alt="" />
                             <div class="image-change-step-all">
-                                <img id="ImageStepOne" src="{{ asset('assets/img/Favorite Products.png') }}"
-                                    class="imageAll" alt="{{ __('general.sec_app_works.step_1.title') }}" />
-                                <img id="ImageStepTow" src="{{ asset('assets/img/image 198.png') }}" class="imageAll"
-                                    alt="{{ __('general.sec_app_works.step_2.title') }}" />
-                                <img id="ImageStepThree" src="{{ asset('assets/img/search Products.png') }}"
-                                    class="imageAll" alt="{{ __('general.sec_app_works.step_3.title') }}" />
-                                <img id="ImageStepFour" src="{{ asset('assets/img/Change location.png') }}"
-                                    class="imageAll" alt="{{ __('general.sec_app_works.step_4.title') }}" />
+                                @foreach ($faqs as $faq)
+                                    <img id="ImageStepOne" src="{{ uploaded_asset($faq->image) }}"
+                                        class="imageAll" alt="{{ __('general.sec_app_works.step_1.title') }}" />
+                                @endforeach
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-8 customeRowStep2">
                         @foreach ($faqs as $faq)
-                            <div id="BoxOneStep" class="box-step-work activeBoxWork" data-aos="zoom-in"
-                                data-aos-duration="1500">
+                            @switch($loop->index)
+                                @case(0)
+                                    @php
+                                        $box_id = 'BoxOneStep';
+                                    @endphp
+                                @break
+
+                                @case(1)
+                                    @php
+                                        $box_id = 'BoxTowStep';
+                                    @endphp
+                                @break
+
+                                @case(2)
+                                    @php
+                                        $box_id = 'BoxThreeStep';
+                                    @endphp
+                                @break
+
+                                @case(3)
+                                    @php
+                                        $box_id = 'BoxThreeStep';
+                                    @endphp
+                                @break
+
+                                @default
+                            @endswitch
+                            <div id="{{ $box_id }}"
+                                class="box-step-work @if ($loop->index == 0) activeBoxWork @endif"
+                                data-aos="zoom-in" data-aos-duration="1500">
                                 <article class="art-num">
                                     <h2>{{ $loop->index + 1 }}</h2>
                                 </article>
@@ -213,7 +237,7 @@
                                                 <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
                                                     alt="" />
                                                 <span>
-                                                    {{ $product_stock->product?->shop?->address }}
+                                                    {{ $product_stock->product?->shop?->getAddress() }}
                                                 </span>
                                             </div>
                                             <div class="price-product">
@@ -251,7 +275,7 @@
                                                 <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
                                                     alt="" />
                                                 <span>
-                                                    {{ $product_stock->product?->shop?->address }}
+                                                    {{ $product_stock->product?->shop?->getAddress() }}
                                                 </span>
                                             </div>
                                             <div class="price-product">
@@ -277,11 +301,11 @@
         <!-- --- End Product Section -->
 
         <!-- --- Start Sec-Store -->
-        <section class="Sec_Store">
+        {{-- <section class="Sec_Store">
             <div class="container-fluid">
                 <div class="flex-title-store-viewAll">
                     <h4>{{ __('general.sec_store.title') }}</h4>
-                    {{-- <a href="">{{ __('general.view_all') }} </a> --}}
+                    <a href="">{{ __('general.view_all') }} </a>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6 customeColumeTopStore">
@@ -298,7 +322,7 @@
                                                 <h6>{{ $shop->getCategroiesNamesString() }}</h6>
                                                 <div class="info-detalis-store">
                                                     <img src="{{ asset('assets/img/system-uicons_location.svg') }}" />
-                                                    <span>{{ $shop->address }}</span>
+                                                    <span>{{ $shop->getAddress() }}</span>
                                                 </div>
                                             </article>
                                         </div>
@@ -323,7 +347,7 @@
                                                 <h6>{{ $shop->getCategroiesNamesString() }}</h6>
                                                 <div class="info-detalis-store">
                                                     <img src="{{ asset('assets/img/system-uicons_location.svg') }}" />
-                                                    <span>{{ $shop->address }}</span>
+                                                    <span>{{ $shop->getAddress() }}</span>
                                                 </div>
                                             </article>
                                         </div>
@@ -335,7 +359,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- --- End Sec_Store -->
 
 

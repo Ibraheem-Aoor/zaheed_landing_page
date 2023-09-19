@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 function saveImage($path, $file)
 {
-    $filename = time() .'.'. $file->getClientOriginalExtension();
+    $filename = time() . '.' . $file->getClientOriginalExtension();
     $full_stored_image_path = Storage::disk('public')->putFileAs($path, $file, $filename);
     return $full_stored_image_path;
 }
@@ -273,5 +273,20 @@ if (!function_exists('uploaded_asset')) {
             return $asset->external_link == null ? my_asset($asset->file_name) : $asset->external_link;
         }
         return asset('assets/img/placeholder.jpg');
+    }
+}
+
+
+
+//get user agent
+if (!function_exists('getUserAgent')) {
+    function getUserAgent()
+    {
+        $user_agent = request()->userAgent();
+        if (stripos($user_agent, 'Chrome') !== false) {
+            return "Chrome";
+        } elseif (stripos($user_agent, 'Safari') !== false) {
+            return "Safari";
+        }
     }
 }

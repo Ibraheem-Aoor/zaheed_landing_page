@@ -100,7 +100,7 @@
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.number_of_branches') }}</label>
                                 <input type="text" placeholder="{{ __('general.partner_registration.enter_number') }}"
-                                    required name="number_of_branches" />
+                                    required name="number_of_branches" class="numeric-only" />
                             </div>
                             <!-- ------ -->
                             <div class="all-input-failds-partner">
@@ -120,7 +120,7 @@
                             <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.email') }}:</label>
-                                <input type="text" required
+                                <input type="email" required
                                     placeholder="{{ __('general.partner_registration.enter_email') }}" name="email" />
                             </div>
                             <div class="all-input-failds-partner">
@@ -372,6 +372,7 @@
     </script>
     <script>
         var validation_error_msg = "{{ __('general.please_fill_all_inputs') }}";
+        var email_validation_error_msg = "{{ __('general.email_invalid') }}";
 
         function validateFieldset(btn, fieldset_count) {
             var isValid = true;
@@ -385,6 +386,15 @@
                     isValid = false;
                     toastr.error(validation_error_msg);
                     return false;
+                }
+                // Check if the input has type "email" and validate the email format
+                if ($(this).attr('type') === 'email') {
+                    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    if (!emailPattern.test($(this).val())) {
+                        isValid = false;
+                        toastr.error(email_validation_error_msg);
+                        return false;
+                    }
                 }
             });
             if (isValid) {
@@ -431,5 +441,17 @@
                 easing: 'easeInOutBack'
             });
         }
+
+
+        $(document).on('keyup', '.numeric-only', function() {
+            const sanitizedValue = $(this).val().replace(/[^0-9.]/g, '');
+            // Ensure the value is not negative
+            if (sanitizedValue.startsWith('-')) {
+                $(this).val('');
+            } else {
+                $(this).val(sanitizedValue);
+            }
+
+        });
     </script>
 @endpush

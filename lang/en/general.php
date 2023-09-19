@@ -164,4 +164,5 @@ return [
     ],
 
     'please_fill_all_inputs' => 'Please Fill All Inputs',
+    'email_invalid' => 'Email Is Invalid',
 ];

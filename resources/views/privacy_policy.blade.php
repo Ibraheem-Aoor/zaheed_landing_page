@@ -2,13 +2,12 @@
 @section('content')
     <!-- --- Start Main -->
     <main id="Main">
-
         <!-- --- Start Sec Privacy Policy -->
         <section class="privacy-policy">
             <div class="container">
                 <div class="all-head-page">
                     <h4>
-                        Privacy Policy
+                        {{ __('general.footer.privacy_policy') }}
                     </h4>
                     <div class="cricle-bg"></div>
                 </div>

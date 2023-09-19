@@ -87,6 +87,21 @@
     <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     @stack('js')
+    <script>
+        // Get all the anchor tags inside a specific container (e.g., with class "active-links")
+        const links = document.querySelectorAll('nav-link.a');
+
+        // Loop through each anchor tag
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Remove the "active" class from all anchor tags
+                links.forEach(link => link.classList.remove('active'));
+                // Add the "active" class to the clicked anchor tag
+                this.classList.add('active');
+            });
+        });
+    </script>
+
 </body>
 
 </html>

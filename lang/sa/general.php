@@ -169,6 +169,7 @@ return [
 
     ],
     'please_fill_all_inputs' => 'الرجاء تعبئة جميع الحقول',
+    'email_invalid' => 'الإيميل غير صالح',
 
 
 ];

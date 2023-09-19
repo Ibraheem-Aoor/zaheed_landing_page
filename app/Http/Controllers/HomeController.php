@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Models\CommonQuestion;
 use App\Models\LandingPageContact;
 use App\Models\Page;
 use App\Models\Product;
@@ -16,10 +17,11 @@ use Throwable;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $data['user_agent'] = getUserAgent();
         $data['locale'] = app()->getLocale();
-        $data['faqs'] = DB::table('common_question_translations')->where('lang', $data['locale'])->get();
+        $data['faqs'] = CommonQuestion::query()->limit(4)->get();
         $data['top_product_stokcs'] = $this->getTopProducts();
         $data['top_product_stokcs_1'] = $data['top_product_stokcs']->take(8); //from 0 => 7
         $data['top_product_stokcs_2'] = $data['top_product_stokcs']->slice(8); // from 8 => end
@@ -90,6 +92,6 @@ class HomeController extends Controller
     public function showPrivacyPolicy()
     {
         $data['page'] = Page::where('slug', 'privacy-policy')->first();
-        return view('privacy_policy' , $data);
+        return view('privacy_policy', $data);
     }
 }
