@@ -78,8 +78,36 @@
                             <img src="{{ asset('assets/img/body.png') }}" class="body-image" alt="" />
                             <div class="image-change-step-all">
                                 @foreach ($faqs as $faq)
-                                    <img id="ImageStepOne" src="{{ uploaded_asset($faq->image) }}"
-                                        class="imageAll" alt="{{ __('general.sec_app_works.step_1.title') }}" />
+                                    @switch($loop->index)
+                                        @case(0)
+                                            @php
+                                                $image_class = 'ImageStepOne';
+                                            @endphp
+                                        @break
+
+                                        @case(1)
+                                            @php
+                                                $image_class = 'ImageStepTow';
+                                            @endphp
+                                        @break
+
+                                        @case(2)
+                                            @php
+                                                $image_class = 'ImageStepThree';
+                                            @endphp
+                                        @break
+
+                                        @case(3)
+                                            @php
+                                                $image_class = 'ImageStepFour';
+                                            @endphp
+                                        @break
+
+                                        @default
+                                    @endswitch
+
+                                    <img id="{{ $image_class }}" src="{{ uploaded_asset($faq->image) }}" class="imageAll"
+                                        alt="{{ __('general.sec_app_works.step_1.title') }}" />
                                 @endforeach
                             </div>
                         </div>
