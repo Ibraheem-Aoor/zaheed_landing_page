@@ -72,15 +72,15 @@
                                     <span>*</span></label>
                                 <input type="text" required
                                     placeholder="{{ __('general.partner_registration.store_name_english') }}"
-                                    name="store_name_en" />
+                                    name="store_name_en" class="en-only" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.store_name_arabic') }}
                                     <span>*</span></label>
                                 <input required type="text"
-                                    placeholder="{{ __('general.partner_registration.enter_name') }}"
-                                    name="store_name_ar" />
+                                    placeholder="{{ __('general.partner_registration.enter_name') }}" name="store_name_ar"
+                                    class="ar-only" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for="" class="lab-tst">{{ __('general.partner_registration.category') }}
@@ -89,9 +89,10 @@
                                     aria-label="{{ __('general.partner_registration.select_category') }}"
                                     name="category_id">
                                     <option>{{ __('general.partner_registration.select_category') }}</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->getTranslation('name') }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                             <!-- ----------- -->
@@ -107,14 +108,14 @@
                                     class="lab-tst">{{ __('general.partner_registration.user_name_english') }}</label>
                                 <input type="text" required
                                     placeholder="{{ __('general.partner_registration.user_name_english') }}"
-                                    name="username_en" />
+                                    name="username_en" class="en-only" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.user_name_arabic') }}</label>
                                 <input type="text" required
                                     placeholder="{{ __('general.partner_registration.user_name_arabic') }}"
-                                    name="username_ar" />
+                                    name="username_ar" class="ar-only" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
@@ -128,9 +129,7 @@
                                 <select class="form-select" required
                                     aria-label="{{ __('general.partner_registration.select_city') }}" name="city_id">
                                     <option>{{ __('general.partner_registration.select_city') }}</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="{{ $city->id }}">{{ $city->getTranslation('name') }}</option>
                                 </select>
                             </div>
                         </div>
@@ -152,7 +151,7 @@
                                     <span>*</span></label>
                                 <input required type="text"
                                     placeholder="{{ __('general.partner_registration.enter_name') }}"
-                                    name="company_name_en" />
+                                    name="company_name_en" class="en-only" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
@@ -210,7 +209,8 @@
                                         <h6>
                                             <span>{{ __('general.partner_registration.browse_files_from_computer') }}</span>
                                         </h6>
-                                        <input type="file" id="uploadImageOne" name="commercial_no_file" hidden />
+                                        <input type="file" accept="jpg,png,web,jpeg" id="uploadImageOne"
+                                            name="commercial_no_file" hidden />
                                     </div>
                                 </div>
                                 <img id="FileImageOne" class="imageAllUpload" src="{{ asset('assets/img/blog-1.jpg') }}"
@@ -227,7 +227,8 @@
                                         <h6>
                                             <span>{{ __('general.partner_registration.browse_files_from_computer') }}</span>
                                         </h6>
-                                        <input type="file" id="uploadImageTow" name="vat_no_file" hidden />
+                                        <input type="file" accept="jpg,png,web,jpeg" id="uploadImageTow"
+                                            name="vat_no_file" hidden />
                                     </div>
                                 </div>
                                 <img id="FileImageTow" class="imageAllUpload" src="{{ asset('assets/img/blog-1.jpg') }}"
@@ -244,7 +245,8 @@
                                         <h6>
                                             <span>{{ __('general.partner_registration.browse_files_from_computer') }}</span>
                                         </h6>
-                                        <input type="file" id="uploadImageThree" name="iban_file" hidden />
+                                        <input type="file" accept="jpg,png,web,jpeg" id="uploadImageThree"
+                                            name="iban_file" hidden />
                                     </div>
                                 </div>
                                 <img id="FileImageThree" class="imageAllUpload"
@@ -280,7 +282,7 @@
         }
         InputJUploadGelery.addEventListener("change", function() {
             const file = this.files[0];
-            if (file) {
+            if (file && file.type.match('image.*')) {
                 const reader = new FileReader();
                 reader.onload = function() {
                     const result = reader.result;
@@ -292,9 +294,13 @@
                 reader.readAsDataURL(file);
             }
             if (this.value) {
-                let valueStore = this.value.match(regExp);
-                fileNameImageGellry.textContent = valueStore;
-                fileNameImageGellry.classList.toggle("addClassImage");
+                if (file.type.match('image.*')) {
+                    let valueStore = this.value.match(regExp);
+                    fileNameImageGellry.textContent = valueStore;
+                    fileNameImageGellry.classList.toggle("addClassImage");
+                } else {
+                    this.value = "";
+                }
             }
         });
 
@@ -309,7 +315,8 @@
         }
         InputJUploadGelery2.addEventListener("change", function() {
             const file = this.files[0];
-            if (file) {
+            if (file && file.type.match('image.*')) {
+
                 const reader = new FileReader();
                 reader.onload = function() {
                     const result = reader.result;
@@ -321,9 +328,13 @@
                 reader.readAsDataURL(file);
             }
             if (this.value) {
-                let valueStore = this.value.match(regExp);
-                fileNameImageGellry2.textContent = valueStore;
-                fileNameImageGellry2.classList.toggle("addClassImage");
+                if (file.type.match('image.*')) {
+                    let valueStore = this.value.match(regExp);
+                    fileNameImageGellry2.textContent = valueStore;
+                    fileNameImageGellry2.classList.toggle("addClassImage");
+                } else {
+                    this.value = "";
+                }
             }
         });
         // -------------------
@@ -336,7 +347,8 @@
         }
         InputJUploadGelery3.addEventListener("change", function() {
             const file = this.files[0];
-            if (file) {
+            if (file && file.type.match('image.*')) {
+
                 const reader = new FileReader();
                 reader.onload = function() {
                     const result = reader.result;
@@ -348,9 +360,13 @@
                 reader.readAsDataURL(file);
             }
             if (this.value) {
-                let valueStore = this.value.match(regExp);
-                fileNameImageGellry3.textContent = valueStore;
-                fileNameImageGellry3.classList.toggle("addClassImage");
+                if (file.type.match('image.*')) {
+                    let valueStore = this.value.match(regExp);
+                    fileNameImageGellry3.textContent = valueStore;
+                    fileNameImageGellry3.classList.toggle("addClassImage");
+                } else {
+                    this.value = "";
+                }
             }
         });
     </script>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Partner\ApplyPartnerRequest;
 use App\Http\Requests\Partner\CheckStepRequest;
+use App\Models\Category;
+use App\Models\City;
 use App\Models\PartnerApplication;
 use Illuminate\Http\Request;
 use Throwable;
@@ -12,7 +14,9 @@ class PartnerController extends Controller
 {
     public function create()
     {
-        return view('partner.create');
+        $data['categories'] =   Category::query()->whereNull('parent_id')->orWhere('parent_id' , 0)->get();
+        $data['city'] =   City::query()->find(37444);
+        return view('partner.create' , $data);
     }
 
 
@@ -40,7 +44,7 @@ class PartnerController extends Controller
     protected function uploadFiles($reqeust): array
     {
         foreach ($reqeust->files as $key => $file) {
-            $files[$key] = saveImage('uploads/partner_applications/', $file);
+            $files[$key] = saveImage('partner_applications', $file);
         }
         return $files;
     }

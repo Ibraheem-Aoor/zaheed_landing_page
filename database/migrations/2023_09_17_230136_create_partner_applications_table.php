@@ -15,11 +15,13 @@ return new class extends Migration {
             $table->string('store_name_en');
             $table->string('store_name_ar');
             $table->integer('category_id'); // Adjust the type as needed
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('number_of_branches');
             $table->string('username_en');
             $table->string('username_ar');
             $table->string('email');
-            $table->integer('city_id'); // Adjust the type as needed
+            $table->bigInteger('city_id'); // Adjust the type as needed
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->string('company_name_en');
             $table->string('commercial_register');
             $table->string('tax_number');

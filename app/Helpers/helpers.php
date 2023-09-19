@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 function saveImage($path, $file)
 {
-    $filename = time() . $file->getClientOriginalName();
+    $filename = time() .'.'. $file->getClientOriginalExtension();
     $full_stored_image_path = Storage::disk('public')->putFileAs($path, $file, $filename);
     return $full_stored_image_path;
 }
