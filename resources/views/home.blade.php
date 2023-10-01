@@ -19,7 +19,9 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-5">
                         <div class="image-cover-header">
-                            <img class="man-cover" src="{{ asset('assets/img/cover.svg') }}" alt="" />
+                            <img class="man-cover"
+                                src="{{ uploaded_asset(get_setting('landing_page_about_us_image', null, $locale)) }}"
+                                alt="" />
 
                             <div class="image-vactor-pos">
                                 <img class="vactor-one" src="{{ asset('assets/img/Star 1.png') }}" alt="" />
@@ -35,39 +37,24 @@
         <!-- --- End Sec-Cover -->
 
         <!-- --- Start Sec-Client -->
-        {{-- <section class="sec-client" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+        <section class="sec-client" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container">
                 <div class="flex-client-row">
-                    <div class="card-client-row">
-                        <img src="{{ asset('assets/img/1280px-Zara_Logo 1.png') }}" alt="" />
-                    </div>
-                    <div class="card-client-row">
-                        <img src="{{ asset('assets/img/Vector (1).svg') }}" alt="" />
-                    </div>
-                    <div class="card-client-row">
-                        <img src="{{ asset('assets/img/champion-logo 1.svg') }}" alt="" />
-                    </div>
-                    <div class="card-client-row">
-                        <img src="{{ asset('assets/img/Umbro_logo_(current) 1.png') }}" alt="" />
-                    </div>
-                    <div class="card-client-row">
-                        <img src="{{ asset('assets/img/DeFacto_logo 1.png') }}" alt="" />
-                    </div>
-                    <div class="card-client-row">
-                        <img src="{{ asset('assets/img/1280px-Zara_Logo 1.png') }}" alt="" />
-                    </div>
-                    <div class="card-client-row">
-                        <img src="{{ asset('assets/img/1280px-Zara_Logo 1.png') }}" alt="" />
-                    </div>
+                    @foreach ($brands as $brand_image)
+                        <div class="card-client-row">
+                            <img src="{{ uploaded_asset($brand_image) }}" alt="" width="80" height="80" />
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
-        </section> --}}
+        </section>
         <!-- --- End Sec_Client -->
 
         <!-- --- Start Sec-App-Works -->
         <div class="title-tst-center-work-step" data-aos="zoom-in" data-aos-duration="1500" id="faqs">
             <div class="container">
-                <h4>{{ __('general.sec_app_works.title') }}</h4>
+                <h4>{!! get_setting('landing_page_faqs_sec_title', null, $locale) !!}</h4>
             </div>
         </div>
         <section class="sec-app-work" data-aos="fade-up" data-aos-duration="1500">
@@ -165,44 +152,20 @@
         <!-- --- Start advantages? -->
         <section class="advantages" id="advantages" data-aos="zoom-in" data-aos-duration="1000">
             <div class="container-fluid">
-                <h3>{{ __('general.advantages.title') }}</h3>
+                <h3>{!! get_setting('landing_page_feature_sec_title', null, $locale) !!}</h3>
                 <div class="row mt-5">
-                    <div class="col-sm-12 col-md-6 col-lg-3 customeAd">
-                        <div class="box-advantages">
-                            <div class="box-bg-adv">
-                                <img src="{{ asset('assets/img/ad1.svg') }}"
-                                    alt="{{ __('general.advantages.advantage_1.title') }}" />
+                    @foreach ($features as $feature)
+                        <div class="col-sm-12 col-md-6 col-lg-3 customeAd">
+                            <div class="box-advantages">
+                                <div class="box-bg-adv">
+                                    <img src="{{ uploaded_asset($feature->image) }}"
+                                        alt="{{ __('general.advantages.advantage_1.title') }}" />
+                                </div>
+                                <h6>{{ $feature->getTranslation('name') }}</h6>
                             </div>
-                            <h6>{{ __('general.advantages.advantage_1.description') }}</h6>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3 customeAd">
-                        <div class="box-advantages">
-                            <div class="box-bg-adv">
-                                <img src="{{ asset('assets/img/noun-pin-1015736 1.svg') }}"
-                                    alt="{{ __('general.advantages.advantage_2.title') }}" />
-                            </div>
-                            <h6>{{ __('general.advantages.advantage_2.description') }}</h6>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3 customeAd">
-                        <div class="box-advantages">
-                            <div class="box-bg-adv">
-                                <img src="{{ asset('assets/img/search-svgrepo-com (1) 1.svg') }}"
-                                    alt="{{ __('general.advantages.advantage_3.title') }}" />
-                            </div>
-                            <h6>{{ __('general.advantages.advantage_3.description') }}</h6>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3 customeAd">
-                        <div class="box-advantages">
-                            <div class="box-bg-adv">
-                                <img src="{{ asset('assets/img/price-tag-svgrepo-com 2.svg') }}"
-                                    alt="{{ __('general.advantages.advantage_4.title') }}" />
-                            </div>
-                            <h6>{{ __('general.advantages.advantage_4.description') }}</h6>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </section>
@@ -234,7 +197,7 @@
 
 
         <!-- --- Start Product Section -->
-        <section class="sec-product" id="sec-product">
+        <section class="sec-product d-none" id="sec-product">
             <div class="container-fluid">
                 <div class="flex-title-product">
                     <h4>{{ __('general.sec_product.title') }}</h4>
@@ -288,6 +251,40 @@
                     <div class="card-product">
                         <div class="row mt-5">
                             @foreach ($top_product_stokcs_2 as $product_stock)
+                                @if ($loop->index == 1)
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <div class="box-product-card">
+                                            <div class="bg-soon">
+                                                <img src="{{ asset('assets/img/not-found.png') }}" />
+                                                <h5 data-text="Soon...">
+                                                </h5>
+                                            </div>
+                                            <div class="content-product">
+                                                <h5>MEN'S T-SHIRT Space print</h5>
+                                                <div class="flex-inof-detalis-product">
+                                                    <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
+                                                    <span>_ </span>
+                                                </div>
+                                                <div class="flex-inof-detalis-product">
+                                                    <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}">
+                                                    <span>
+                                                        _
+                                                    </span>
+                                                </div>
+                                                <div class="price-product">
+                                                    <h6>150 SR</h6>
+                                                    <h5>100 SR</h5>
+                                                </div>
+                                                <div class="pos-cat-product">
+                                                    <span class="bx bx-minus"></span>
+                                                    <span>0</span>
+                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}"
+                                                        alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="col-sm-12 col-md-6 col-lg-3">
                                     <div class="box-product-card">
                                         <img class="image-product"
@@ -329,7 +326,7 @@
         <!-- --- End Product Section -->
 
         <!-- --- Start Sec-Store -->
-        {{-- <section class="Sec_Store">
+        <section class="Sec_Store d-none">
             <div class="container-fluid">
                 <div class="flex-title-store-viewAll">
                     <h4>{{ __('general.sec_store.title') }}</h4>
@@ -387,7 +384,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         <!-- --- End Sec_Store -->
 
 
@@ -400,14 +397,16 @@
                             <div class="image-download-body">
                                 <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" />
                                 <div class="image-pos-store">
-                                    <img class="img-fluid" src="{{ asset('assets/img/search Products.png') }}"
+                                    <img class="img-fluid"
+                                        src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}"
                                         alt="" />
                                 </div>
                             </div>
                             <div class="image-download-body2">
                                 <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" />
                                 <div class="image-pos-store2">
-                                    <img class="img-fluid" src="{{ asset('assets/img/image 198.png') }}"
+                                    <img class="img-fluid"
+                                        src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"
                                         alt="" />
                                 </div>
                             </div>
@@ -415,8 +414,8 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6 customeOrder1">
                         <div class="content-download-image">
-                            <h3>{{ __('general.sec_get_app_download.title') }}</h3>
-                            <p>{{ __('general.sec_get_app_download.description') }}</p>
+                            <h3>{!! get_setting('landing_page_download_app_sec_title', null, $locale) !!}</h3>
+                            <p>{!! get_setting('landing_page_download_app_sec_description', null, $locale) !!}</p>
                             <div class="flex-but-download-sotre">
                                 <img src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" alt=""
                                     onclick='window.location.href="{{ get_setting('play_store_link') }}"' />
@@ -433,14 +432,14 @@
 
         <!-- ---- Start Sec_Massage -->
         <div class="title-massage">
-            <h4>{{ __('general.sec_massage.title') }}</h4>
+            <h4> {!! get_setting('landing_page_help_partners_sec_title', null, $locale) !!}</h4>
         </div>
         <section class="Sec_Massage">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <div class="content-massage">
-                            <h4>{{ __('general.sec_massage.content') }}</h4>
+                            <h4> {!! get_setting('landing_page_help_partners_sec_description', null, $locale) !!}</h4>
                             <a href="{{ route('partner.index') }}">{{ __('general.sec_massage.become_partner') }}</a>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     direction: rtl !important;
@@ -6,7 +6,7 @@
 
 }
 
-.pos-tag-top{
+.pos-tag-top {
     min-width: 60px;
     position: absolute;
     right: 90%;
@@ -24,47 +24,54 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-  }
-  .info-right-product a{
+}
+
+.info-right-product a {
     margin: 0px 15px;
     border-left: 1px solid #E1E1E1 !important;
     border-right: none;
     padding: 0px 15px;
-    color:  #211E1E;
+    color: #211E1E;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: 32px;
-  }
-  .arrow-action-product span{
+}
+
+.arrow-action-product span {
     transform: rotate(180deg);
-  }
-  #progressbarAll li:after {
+}
+
+#progressbarAll li:after {
     content: '';
     width: 100%;
-      height: 1px;
+    height: 1px;
     position: absolute;
     right: -50% !important;
     top: 20px;
     z-index: -1;
-      border: 1px dashed #828282;
+    border: 1px dashed #828282;
 
-  }
-  .form-partner .content-form-parnter{
+}
+
+.form-partner .content-form-parnter {
     text-align: right !important;
-  }
-  .all-input-failds-partner{
-    text-align: right ;
-  }
-  .all-input-failds-partner select{
-    text-align: riight !important;
-  }
+}
 
-  .box-upload-image-company label{
+.all-input-failds-partner {
+    text-align: right;
+}
+
+.all-input-failds-partner select {
+    text-align: left !important;
+}
+
+.box-upload-image-company label {
     text-align: right !important;
     width: 100% !important;
-  }
-  #msform .action-button {
+}
+
+#msform .action-button {
     min-width: 100px;
     height: 45px;
     font-weight: bold;
@@ -79,23 +86,26 @@
     border-radius: 8px;
     background: rgba(229, 0, 0, 1);
     color: #F2F2F2;
-    font-family: 'Poppins', sans-serif ;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     position: absolute;
     right: 85%;
 
-  }
-  .swiper-button-next span{
+}
+
+.swiper-button-next span {
     transform: rotate(180deg);
-  }
-  .swiper-button-prev span{
+}
+
+.swiper-button-prev span {
     transform: rotate(180deg);
-  }
-  .image-cover-header .man-cover{
+}
+
+.image-cover-header .man-cover {
     position: absolute;
     right: -130px !important;
     bottom: 0px;
     height: 650px;
-  }
+}

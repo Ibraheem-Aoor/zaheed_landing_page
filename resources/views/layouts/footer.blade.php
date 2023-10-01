@@ -1,12 +1,15 @@
 <!-- --- Start Footer -->
 <footer class="footer">
+    @php
+        $locale = app()->getLocale();
+    @endphp
     <div class="container-fluid">
         <div class="contact-form">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="content-contact-form">
-                        <h4>{{ __('general.footer.title') }}</h4>
-                        <p>{{ __('general.footer.content') }}</p>
+                        <h4>   {!! get_setting('landing_page_contact_sec_title', null, $locale) !!}</h4>
+                        <p> {!! get_setting('landing_page_contact_us_sec_description', null, $locale) !!}</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">

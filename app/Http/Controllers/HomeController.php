@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\CommonQuestion;
+use App\Models\Feature;
 use App\Models\LandingPageContact;
 use App\Models\Page;
 use App\Models\Product;
@@ -22,12 +23,14 @@ class HomeController extends Controller
         $data['user_agent'] = getUserAgent();
         $data['locale'] = app()->getLocale();
         $data['faqs'] = CommonQuestion::query()->limit(4)->get();
+        $data['features'] = Feature::query()->get();
         $data['top_product_stokcs'] = $this->getTopProducts();
         $data['top_product_stokcs_1'] = $data['top_product_stokcs']->take(8); //from 0 => 7
         $data['top_product_stokcs_2'] = $data['top_product_stokcs']->slice(8); // from 8 => end
         $data['top_shops'] = $this->getTopShops();
         $data['latest_shops'] = $this->getLatestShops();
         $data['landing_page_sliders'] = DB::table('landing_page_sliders')->get();
+        $data['brands'] = DB::table('brands')->where('logo' , '!=' , null)->limit(15)->pluck('logo')->toArray();
         return view('home', $data);
     }
 

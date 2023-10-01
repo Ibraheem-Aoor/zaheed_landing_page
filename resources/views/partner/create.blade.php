@@ -1,25 +1,36 @@
 @extends('layouts.master')
+@push('css')
+    <style>
+        .mt-5 {
+            margin-top: 5% !important;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endpush
 @section('content')
+@php
+    $locale = app()->getLocale();
+@endphp
     <!-- --- Start Main -->
     <main id="">
         <!-- --- Start Bg Red -->
         <section class="sec-bg-red">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-sm-12 col-md-6 col-lg-7">
+                    <div class="col-sm-12 col-md-6 col-lg-7 mt-5">
                         <div class="content-bg-red">
-                            <h4>{{ __('general.partner_registration.attract_new_customers') }}</h4>
+                            <h4> {!! get_setting('landing_page_partner_sec_title', null, $locale) !!}</h4>
                             <p>
-                                {{ __('general.partner_registration.business_size_message') }}
+                                {!! get_setting('landing_page_partner_sec_description', null, $locale) !!}
                             </p>
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-6 col-lg-5">
-                        <div class="content-all-image-bgRed">
-                            <div class="iamge-bg-red">
+                    <div class="col-sm-12 col-md-6 col-lg-5 ">
+                        <div class="content-all-image-bgRed ">
+                            {{-- <div class="iamge-bg-red">
                                 <img class="imageUser" src="{{ asset('assets/img/user.png') }}" alt="" />
-                            </div>
+                            </div> --}}
                             <div class="pos-star-image">
                                 <img class="star-big-left" src="{{ asset('assets/img/Star 1.png') }}" alt="" />
                                 <img class="star-small-bottom-left" src="{{ asset('assets/img/Star 1.png') }}"
@@ -85,7 +96,7 @@
                             <div class="all-input-failds-partner">
                                 <label for="" class="lab-tst">{{ __('general.partner_registration.category') }}
                                     <span>*</span></label>
-                                <select class="form-select" required
+                                <select class="form-select js-example-disabled-results" required
                                     aria-label="{{ __('general.partner_registration.select_category') }}"
                                     name="category_id">
                                     <option>{{ __('general.partner_registration.select_category') }}</option>
@@ -126,7 +137,7 @@
                             <div class="all-input-failds-partner">
                                 <label for="" class="lab-tst">{{ __('general.partner_registration.city') }}
                                     <span>*</span></label>
-                                <select class="form-select" required
+                                <select class="form-select js-example-disabled-results" required
                                     aria-label="{{ __('general.partner_registration.select_city') }}" name="city_id">
                                     <option>{{ __('general.partner_registration.select_city') }}</option>
                                     <option value="{{ $city->id }}">{{ $city->getTranslation('name') }}</option>
@@ -270,6 +281,7 @@
 @push('js')
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <script src="{{ asset('assets/js/step.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
@@ -453,5 +465,10 @@
             }
 
         });
+    </script>
+    {{-- select 2 --}}
+    <script>
+        var $disabledResults = $(".js-example-disabled-results");
+        $disabledResults.select2();
     </script>
 @endpush

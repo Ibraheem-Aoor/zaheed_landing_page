@@ -19,10 +19,10 @@
                         <a class="nav-link"
                             href="{{ route('home') }}#advantages">{{ __('general.header.advantages') }}</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link"
                             href="{{ route('home') }}#sec-product">{{ __('general.header.discounts') }}</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}#faqs">{{ __('general.header.faq') }}</a>
                     </li>
@@ -30,7 +30,8 @@
                         <a class="nav-link" href="#contact">{{ __('general.header.contacts') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>
+                        <a class="nav-link @if (Route::currentRouteName() == 'partner.index') active @endif"
+                            href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>
                     </li>
                 </ul>
                 <form class="d-flex">
