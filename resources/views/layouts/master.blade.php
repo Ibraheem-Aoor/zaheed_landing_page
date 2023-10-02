@@ -86,7 +86,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    @stack('js')
     <script>
         // احصل على عناصر الروابط في قائمة الـ nav
         const navLinks = document.querySelectorAll('nav a');
@@ -112,6 +111,8 @@
             });
         });
     </script>
+    @stack('js')
+
 
 </body>
 
