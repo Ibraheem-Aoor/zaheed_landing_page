@@ -88,16 +88,27 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     @stack('js')
     <script>
-        // Get all the anchor tags inside a specific container (e.g., with class "active-links")
-        const links = document.querySelectorAll('nav-link.a');
+        // احصل على عناصر الروابط في قائمة الـ nav
+        const navLinks = document.querySelectorAll('nav a');
 
-        // Loop through each anchor tag
-        links.forEach(link => {
+        // اضف مثيل event listener لكل عنصر
+        navLinks.forEach(link => {
             link.addEventListener('click', function(event) {
-                // Remove the "active" class from all anchor tags
-                links.forEach(link => link.classList.remove('active'));
-                // Add the "active" class to the clicked anchor tag
-                this.classList.add('active');
+
+                // قم بإزالة اللون المحدد من كل الروابط
+                navLinks.forEach(link => {
+                    link.classList.remove('activeListNav');
+                });
+
+                // قم بتعيين اللون المحدد للرابط الذي تم الضغط عليه
+                this.classList.add('activeListNav');
+
+                // انتقل إلى القسم المرتبط بالرابط باستخدام الهاش (#)
+                const sectionId = this.getAttribute('href').substring(1);
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>

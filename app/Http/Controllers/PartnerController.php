@@ -43,7 +43,9 @@ class PartnerController extends Controller
      */
     protected function uploadFiles($reqeust): array
     {
-        foreach ($reqeust->files as $key => $file) {
+        $request_files  =   $reqeust->files;
+        $files = [];
+        foreach ($request_files as $key => $file) {
             $files[$key] = saveImage('partner_applications', $file);
         }
         return $files;

@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 function saveImage($path, $file)
 {
-    $filename = time() . '.' . $file->getClientOriginalExtension();
+    $filename = time() . '_' . mt_rand(111111 , 999999) . '.' . $file->getClientOriginalExtension();
     $full_stored_image_path = Storage::disk('public')->putFileAs($path, $file, $filename);
     return $full_stored_image_path;
 }

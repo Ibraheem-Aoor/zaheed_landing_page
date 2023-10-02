@@ -13,7 +13,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#sec-cover">{{ __('general.header.about') }}</a>
+                        <a class="nav-link" aria-current="page"
+                            href="@if (Route::currentRouteName() != 'home') {{ route('home') }} @else #sec-cover @endif">{{ __('general.header.about') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
@@ -30,7 +31,7 @@
                         <a class="nav-link" href="#contact">{{ __('general.header.contacts') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if (Route::currentRouteName() == 'partner.index') active @endif"
+                        <a class="nav-link @if (Route::currentRouteName() == 'partner.index') activeListNav @endif"
                             href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>
                     </li>
                 </ul>
