@@ -135,9 +135,9 @@
                                     <h2>{{ $loop->index + 1 }}</h2>
                                 </article>
                                 <article class="content-work">
-                                    <h4>{{ $faq->question }}</h4>
+                                    <h4>{{ $faq->getTranslation('question') }}</h4>
                                     <p>
-                                        {{ $faq->answer }}
+                                        {{ $faq->getTranslation('answer') }}
                                     </p>
                                 </article>
                             </div>
