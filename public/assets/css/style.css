@@ -522,7 +522,7 @@ a{
   line-height: 32px; /* 160% */
 }
 #Main{
-  width: 95%;
+  width: 90%;
   margin: auto;
 }
 .Sec_Store{
@@ -1224,6 +1224,7 @@ min-width: 70px;
 .swiper-slide img {
   width: 100%;
   height: 700px;
+  border-radius: 18.788px ;
 }
 /* .swiper-slide .swiper-slide-shadow-left{
   opacity: 0.4 !important;
@@ -1535,3 +1536,14 @@ min-width: 70px;
   font-weight: bold;
   margin: 15px 0px;
 }
+
+.iphone-cover{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32%;
+  height: 91.5%;
+}
+/* 
+

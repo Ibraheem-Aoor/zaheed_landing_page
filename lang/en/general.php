@@ -20,7 +20,7 @@ return [
         'faq' => 'FAQ',
         'contacts' => 'Contacts',
         'partner' => 'Become a partner',
-        'arabic' => 'ARA',
+        'arabic' => 'العربية',
         'english' => 'English',
         'getApp' => 'Get App',
     ],

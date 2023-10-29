@@ -3,7 +3,7 @@
     <!-- --- Start Main -->
     <main id="Main">
         <!-- -- Start Sec-Cover -->
-        <section class="sec-cover" data-aos="fade-up" data-aos-duration="1500" id="sec-cover">
+        <section class="sec-cover" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true" id="sec-cover">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-sm-12 col-md-12 col-lg-7">
@@ -37,7 +37,7 @@
         <!-- --- End Sec-Cover -->
 
         <!-- --- Start Sec-Client -->
-        <section class="sec-client" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+        {{-- <section class="sec-client" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container">
                 <div class="flex-client-row">
                     @foreach ($brands as $brand_image)
@@ -48,16 +48,17 @@
 
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- --- End Sec_Client -->
 
         <!-- --- Start Sec-App-Works -->
-        <div class="title-tst-center-work-step" data-aos="zoom-in" data-aos-duration="1500" id="faqs">
+        <div class="title-tst-center-work-step" data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true" id="faqs">
             <div class="container">
-                <h4>{!! get_setting('landing_page_faqs_sec_title', null, $locale) !!}</h4>
+                {{-- <h4>{!! get_setting('landing_page_faqs_sec_title', null, $locale) !!}</h4> --}}
+                <h4>{{ __('general.sec_app_works.title') }}</h4>
             </div>
         </div>
-        <section class="sec-app-work" data-aos="fade-up" data-aos-duration="1500">
+        <section class="sec-app-work" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-4 customeRowStep">
@@ -130,7 +131,7 @@
                             @endswitch
                             <div id="{{ $box_id }}"
                                 class="box-step-work @if ($loop->index == 0) activeBoxWork @endif"
-                                data-aos="zoom-in" data-aos-duration="1500">
+                                data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true">
                                 <article class="art-num">
                                     <h2>{{ $loop->index + 1 }}</h2>
                                 </article>
@@ -150,7 +151,7 @@
         <!-- --- End  Sec-App-Works-->
 
         <!-- --- Start advantages? -->
-        <section class="advantages" id="advantages" data-aos="zoom-in" data-aos-duration="1000">
+        <section class="advantages" id="advantages" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
             <div class="container-fluid">
                 <h3>{!! get_setting('landing_page_feature_sec_title', null, $locale) !!}</h3>
                 <div class="row mt-5">
@@ -175,8 +176,10 @@
 
         @if (isset($landing_page_sliders) && !$landing_page_sliders->isEmpty())
             <!-- --- Start Sec Silder 3D  -->
-            <section class="bg-sildeRed" data-aos="zoom-in-up" data-aos-duration="1000">
+            <section class="bg-sildeRed" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-once="true">
+                
                 <div class="swiper mySwiper">
+                    <img class="iphone-cover" src="{{ asset('assets/img/iphone_frame.png') }}" >
                     <div class="swiper-wrapper">
                         @foreach ($landing_page_sliders as $slider)
                             <div class="swiper-slide">
@@ -197,7 +200,7 @@
 
 
         <!-- --- Start Product Section -->
-        <section class="sec-product d-none" id="sec-product">
+        <section class="sec-product" id="sec-product">
             <div class="container-fluid">
                 <div class="flex-title-product">
                     <h4>{{ __('general.sec_product.title') }}</h4>
@@ -326,7 +329,7 @@
         <!-- --- End Product Section -->
 
         <!-- --- Start Sec-Store -->
-        <section class="Sec_Store d-none">
+        <section class="Sec_Store ">
             <div class="container-fluid">
                 <div class="flex-title-store-viewAll">
                     <h4>{{ __('general.sec_store.title') }}</h4>
@@ -395,15 +398,14 @@
                     <div class="col-sm-12 col-md-12 col-lg-6 customeOrder2">
                         <div class="image-donwload-app">
                             <div class="image-download-body">
-                                <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" />
+                                {{-- <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" /> --}}
                                 <div class="image-pos-store">
                                     <img class="img-fluid"
-                                        src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}"
-                                        alt="" />
+                                        src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}" alt="" />
                                 </div>
                             </div>
                             <div class="image-download-body2">
-                                <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" />
+                                {{-- <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" /> --}}
                                 <div class="image-pos-store2">
                                     <img class="img-fluid"
                                         src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"
