@@ -131,50 +131,71 @@ $(document).ready(function () {
 
 
 $(function () {
-    $("#BoxOneStep").click(function () {
-        $("#ImageStepOne").show();
-        $("#ImageStepTow").hide();
-        $("#ImageStepThree").hide();
-        $("#ImageStepFour").hide();
-        $(this).addClass("activeBoxWork");
-        $("#BoxTowStep").removeClass("activeBoxWork");
-        $("#BoxThreeStep").removeClass("activeBoxWork");
-        $("#BoxFourStep").removeClass("activeBoxWork");
 
-    });
-    // --------
-    $("#BoxTowStep").click(function () {
-        $("#ImageStepTow").show();
-        $("#ImageStepOne").hide();
-        $("#ImageStepThree").hide();
-        $("#ImageStepFour").hide();
-        $(this).addClass("activeBoxWork");
-        $("#BoxOneStep").removeClass("activeBoxWork");
-        $("#BoxThreeStep").removeClass("activeBoxWork");
-        $("#BoxFourStep").removeClass("activeBoxWork");
-    });
-    // ---------------
-    $("#BoxThreeStep").click(function () {
-        $("#ImageStepThree").show();
-        $("#ImageStepOne").hide();
-        $("#ImageStepTow").hide();
-        $("#ImageStepFour").hide();
-        $(this).addClass("activeBoxWork");
-        $("#BoxOneStep").removeClass("activeBoxWork");
-        $("#BoxTowStep").removeClass("activeBoxWork");
-        $("#BoxFourStep").removeClass("activeBoxWork");
-    });
-    // ----------
-    $("#BoxFourStep").click(function () {
-        $("#ImageStepFour").show();
-        $("#ImageStepOne").hide();
-        $("#ImageStepTow").hide();
-        $("#ImageStepThree").hide();
-        $(this).addClass("activeBoxWork");
-        $("#BoxOneStep").removeClass("activeBoxWork");
-        $("#BoxTowStep").removeClass("activeBoxWork");
-        $("#BoxThreeStep").removeClass("activeBoxWork");
-    });
+
+
+    //select all boxes
+    $('.box-step-work').each(function(key,box){
+
+        $(box).click(function(){
+            var boxId=$(this).data('id')
+
+            // Remove "activeBoxWork" class from all other boxes
+            $('.box-step-work').not(this).removeClass('activeBoxWork');
+
+            //add activeBoxWork class  to the boxes
+            $(this).addClass('activeBoxWork')
+            
+            //hide all images and display 
+            $('.imageAll').hide()
+            $("#ImageStep"+boxId).show(); 
+        })
+    })
+
+    // $("#BoxOneStep").click(function () {
+    //     $("#ImageStepOne").show();
+    //     $("#ImageStepTow").hide();
+    //     $("#ImageStepThree").hide();
+    //     $("#ImageStepFour").hide();
+    //     $(this).addClass("activeBoxWork");
+    //     $("#BoxTowStep").removeClass("activeBoxWork");
+    //     $("#BoxThreeStep").removeClass("activeBoxWork");
+    //     $("#BoxFourStep").removeClass("activeBoxWork");
+
+    // });
+    // // --------
+    // $("#BoxTowStep").click(function () {
+    //     $("#ImageStepTow").show();
+    //     $("#ImageStepOne").hide();
+    //     $("#ImageStepThree").hide();
+    //     $("#ImageStepFour").hide();
+    //     $(this).addClass("activeBoxWork");
+    //     $("#BoxOneStep").removeClass("activeBoxWork");
+    //     $("#BoxThreeStep").removeClass("activeBoxWork");
+    //     $("#BoxFourStep").removeClass("activeBoxWork");
+    // });
+    // // ---------------
+    // $("#BoxThreeStep").click(function () {
+    //     $("#ImageStepThree").show();
+    //     $("#ImageStepOne").hide();
+    //     $("#ImageStepTow").hide();
+    //     $("#ImageStepFour").hide();
+    //     $(this).addClass("activeBoxWork");
+    //     $("#BoxOneStep").removeClass("activeBoxWork");
+    //     $("#BoxTowStep").removeClass("activeBoxWork");
+    //     $("#BoxFourStep").removeClass("activeBoxWork");
+    // });
+    // // ----------
+    // $("#BoxFourStep").click(function () {
+    //     $("#ImageStepFour").show();
+    //     $("#ImageStepOne").hide();
+    //     $("#ImageStepTow").hide();
+    //     $("#ImageStepThree").hide();
+    //     $(this).addClass("activeBoxWork");
+    //     $("#BoxOneStep").removeClass("activeBoxWork");
+    //     $("#BoxTowStep").removeClass("activeBoxWork");
+    //     $("#BoxThreeStep").removeClass("activeBoxWork");
+    // });
 });
 
 
