@@ -678,7 +678,7 @@ a{
   transform: translate(-50%,-50%);
 }
 .image-download-body img{
-  width: 90%;
+  width: 100%;
   height: 90%;
   position: absolute;
   top: 50%;
