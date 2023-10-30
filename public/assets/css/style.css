@@ -802,12 +802,12 @@ a{
   line-height: 50px /* 57.2px */
 }
 .content-contact-form p{
-  color: #BEBEBE;
-  font-size: 18px;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 24px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 30px; /* 166.667% */
-  width: 60%;
+  font-weight: 400;
+  line-height: 130%; /* 23.4px */
 }
 .content-form-footer h2{
   color: #FFF;
