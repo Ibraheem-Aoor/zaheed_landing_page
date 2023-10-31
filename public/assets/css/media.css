@@ -94,9 +94,9 @@
       }
       .image-download-body{
         position: absolute;
-        left: -10px;
-        top: 10% !important;
-        width: 250px !important;
+        left: -38px;
+        top: 3% !important;
+        width: 100%;
       }
       .image-donwload-app{
         width: 100%;
@@ -217,6 +217,10 @@
     }
     .flex-sm-nowrap {
       flex-wrap: nowrap !important;
+    }
+
+    .box-product-card {
+      height: 424px !important;
     }
 }
 /* --------------- */
