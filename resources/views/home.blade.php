@@ -558,19 +558,10 @@
                     <div class="col-sm-12 col-md-12 col-lg-6 customeOrder2">
                         <div class="image-donwload-app">
                             <div class="image-download-body">
-                                {{-- <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" /> --}}
-                                <div class="image-pos-store">
-                                    <img class="img-fluid"
-                                        src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}" alt="" />
-                                </div>
+                                <img class="img-fluid" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}" alt="" />
                             </div>
                             <div class="image-download-body2">
-                                {{-- <img class="imageBody" src="{{ asset('assets/img/body.png') }}" alt="" /> --}}
-                                <div class="image-pos-store2">
-                                    <img class="img-fluid"
-                                        src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"
-                                        alt="" />
-                                </div>
+                                <img class="img-fluid" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"alt="" />
                             </div>
                         </div>
                     </div>

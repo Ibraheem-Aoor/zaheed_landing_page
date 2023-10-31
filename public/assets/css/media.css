@@ -94,9 +94,9 @@
       }
       .image-download-body{
         position: absolute;
-        left: -38px;
+        left: -20px;
         top: 3% !important;
-        width: 100%;
+        width: 90%;
       }
       .image-donwload-app{
         width: 100%;
@@ -107,7 +107,7 @@
         position: absolute;
         top: 50px !important;
         height: 300px;
-        width: 250px;
+        width: 90%;
         left: 70px;
         z-index: 1;
       }
@@ -126,7 +126,7 @@
       .Sec_Massage{
         width: 100%;
         padding: 30px;
-        min-height: 500px;
+        /* min-height: 500px; */
         background: url(../img/massGroup.png) no-repeat, #E11A2C;
         background-size: cover;
         margin: 50px 0px;
@@ -341,7 +341,7 @@
       .Sec_Massage{
         width: 100%;
         padding: 30px;
-        height: 500px;
+        /* height: 500px; */
         background: url(../img/massGroup.png) no-repeat, #E11A2C;
         background-size: cover;
         margin: 50px 0px;
@@ -498,7 +498,7 @@
           .Sec_Massage{
             width: 100%;
             padding: 30px;
-            min-height: 450px;
+            /* min-height: 450px; */
            
           }
           .content-contact-form p{

@@ -626,7 +626,7 @@ a{
 .sec-get-app-donwload{
   width: 100%;
   padding: 30px;
-  min-height: 400px;
+  min-height: 326px;
   background: url(../img/lines.svg) no-repeat, #E11A2C;
   margin: 50px 0px;
   border-radius: 15px;
@@ -644,10 +644,7 @@ a{
   width: 300px;
   z-index: 2 !important;
 }
-.image-download-body .imageBody{
-  width: 100%;
-  height: 100%;
-}
+
 .image-download-body2{
   position: absolute;
   top: 170px;
@@ -656,6 +653,11 @@ a{
   left: 150px;
   z-index: 1;
 }
+.image-download-body .imageBody{
+  width: 100%;
+  height: 100%;
+}
+
 .image-download-body2 .imageBody{
   width: 100%;
   height: 100%;
@@ -674,34 +676,27 @@ a{
   transform: translate(-50%,-50%);
 }
 .image-download-body img{
+
   /* width: 100%;
-  height: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  border-radius: 25px;
-  object-fit: cover; */
-  width: 100%;
   height: 100%;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%); */
   /* border-radius: 25px; */
 }
 .image-pos-store2 img{
   width: 90%;
   height: 90%;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%,-50%);
   border-radius: 25px;
   object-fit: cover;
 }
 .content-download-image{
-  margin-top: 70px;
+  /* margin-top: 70px; */
 }
 .content-download-image h3{
   color: #FFF;
@@ -731,8 +726,7 @@ a{
 }
 .Sec_Massage{
   width: 100%;
-  padding: 30px;
-  height: 350px;
+  padding: 16px;
   background: url(../img/massGroup.png) no-repeat, #E11A2C;
   background-size: cover;
   margin: 50px 0px;
@@ -784,7 +778,7 @@ a{
   margin: 20px 0px;
 }
 .content-massage{
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .footer{
