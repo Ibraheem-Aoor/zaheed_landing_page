@@ -315,7 +315,7 @@
                     <h4>{{ __('general.sec_product.title') }}</h4>
                 </div>
                 <div class="row-flex-product mb ">
-                    <div class="card-product activeCardProdut overflow-auto">
+                    <div class="card-product activeCardProdut overflow-auto" style="overflow-y: hidden !important;">
                         <div class="row mt-5 flex-nowrap">
                             @foreach ($top_product_stokcs_1 as $product_stock)
                                 <div class="col-sm-6 col-md-6 col-lg-3 w-75">
