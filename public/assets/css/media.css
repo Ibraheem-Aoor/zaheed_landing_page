@@ -13,6 +13,9 @@
         bottom:0px !important;
         height: 450px !important;
       } */
+      .customeOrder2 {
+        width: 72% !important;
+      }
       .content-cover{
         padding: 24px 0;
       }
@@ -76,10 +79,10 @@
       }
       .sec-get-app-donwload{
         width: 100%;
-        padding: 30px;
-        height: 600px !important;
+        /* padding: 30px; */
+        /* height: 600px !important; */
         background: url(../img/lines.svg) no-repeat, #E11A2C;
-        margin: 50px 0px;
+        /* margin: 50px 0px; */
         border-radius: 15px;
         overflow: hidden;
       
@@ -98,11 +101,11 @@
         top: 3% !important;
         width: 90%;
       }
-      .image-donwload-app{
+      /* .image-donwload-app{
         width: 100%;
         position: relative;
         height: 500px !important;
-      }
+      } */
       .image-download-body2{
         position: absolute;
         top: 50px !important;
@@ -229,6 +232,9 @@
         min-height: 900px !important;
         overflow: hidden;
       } */
+      .customeOrder2 {
+        width: 72% !important;
+      }
       .image-cover-header{
         height: 500px;
         margin-top: 44px;

@@ -546,17 +546,17 @@
         <section class="sec-get-app-donwload" id="app">
             <div class="container-fluid">
                 <div class="row customeRowDonwload">
-                    <div class="col-sm-12 col-md-12 col-lg-6 customeOrder2">
-                        <div class="image-donwload-app">
-                            <div class="image-download-body">
-                                <img class="img-fluid" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}" alt="" />
+                    <div class="col-sm-12 col-md-12 col-lg-6 customeOrder2 d-flex flex-column justify-content-end">
+                        <div class="image-donwload-app d-flex h-75">
+                            <img class="img-fluid img-download-1" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}" alt="" />
+                            <img class="img-fluid img-download-2" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"alt="" />
+                            {{-- <div class="image-download-body">
                             </div>
                             <div class="image-download-body2">
-                                <img class="img-fluid" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"alt="" />
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-6 customeOrder1">
+                    <div class="col-sm-12 col-md-12 col-lg-6 customeOrder1 py-4">
                         <div class="content-download-image">
                             <h3>{!! get_setting('landing_page_download_app_sec_title', null, $locale) !!}</h3>
                             <p>{!! get_setting('landing_page_download_app_sec_description', null, $locale) !!}</p>

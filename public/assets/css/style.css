@@ -627,7 +627,7 @@ a{
 }
 .sec-get-app-donwload{
   width: 100%;
-  padding: 30px;
+  /* padding: 30px; */
   min-height: 326px;
   background: url(../img/lines.svg) no-repeat, #E11A2C;
   margin: 50px 0px;
@@ -1548,6 +1548,19 @@ min-width: 70px;
   width: 32%;
   height: 686px;
 }
+
+
+.img-download-1{
+  z-index: 2;
+}
+
+.img-download-2{
+  position: relative;
+  right: 70px;
+  top: 35px;
+  z-index: 1;
+}
+
 
 /* 
 
