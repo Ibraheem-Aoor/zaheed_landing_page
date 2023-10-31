@@ -2,14 +2,14 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: Urbanist;
+    font-family: AraHamah1964B-Bold;
 }
 body,html{
     width: 100%;
 }
 @font-face {
-    font-family: Urbanist;
-    src: url(../font/user/static/Urbanist-Regular.ttf);
+    font-family: AraHamah1964B-Bold;
+    src: url(../font/user/static/AraHamah1964B-Bold.ttf);
 }
 
 /* --- Start Custime Css */
@@ -321,6 +321,7 @@ a{
   font-style: normal;
   font-weight: 700;
   line-height: 110%; /* 88px */
+  font-family: AraHamah1964B-Bold !important;
   }
   .content-cover p{
     color: #FFF;
