@@ -313,7 +313,7 @@ a{
     border-radius: 32px;
      background:  #E50000;
     padding:0px 20px;
-    height: 655px;
+    /* height: 655px; */
   }
   .content-cover h2{
     color: #FFF;
@@ -342,14 +342,15 @@ a{
   }
   .image-cover-header{
     position: relative;
+    /* 
     height: 100%;
-    height: 700px;
+    height: 700px; */
   }
 
   .image-cover-header .man-cover{
-    position: absolute;
-    left: 20px;
-    bottom: 45px;
+    /* position: absolute; */
+    /* left: 20px; */
+    /* bottom: 45px; */
   }
   .image-vactor-pos .vactor-one{
     position: absolute;

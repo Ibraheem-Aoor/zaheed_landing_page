@@ -19,16 +19,7 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-5">
                         <div class="image-cover-header">
-                            <img class="man-cover"
-                                src="{{ uploaded_asset(get_setting('landing_page_about_us_image', null, $locale)) }}"
-                                alt="" />
-
-                            <div class="image-vactor-pos">
-                                <img class="vactor-one" src="{{ asset('assets/img/Star 1.png') }}" alt="" />
-                                <img class="vactor-tow" src="{{ asset('assets/img/Star 1.png') }}" alt="" />
-                                <img class="vactor-three" src="{{ asset('assets/img/Star 1.png') }}" alt="" />
-                                <img class="vactor-four" src="{{ asset('assets/img/Star 1.png') }}" alt="" />
-                            </div>
+                            <img class="man-cover img-fluid" src="{{ asset('assets/img/image-cover-header-phone.png') }}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -570,10 +561,10 @@
                             <h3>{!! get_setting('landing_page_download_app_sec_title', null, $locale) !!}</h3>
                             <p>{!! get_setting('landing_page_download_app_sec_description', null, $locale) !!}</p>
                             <div class="flex-but-download-sotre">
-                                <img src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" alt=""
+                                <img src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" class="img-fluid" alt=""
                                     onclick='window.location.href="{{ get_setting('play_store_link') }}"' />
                                 <img src="{{ asset('assets/img/Mobile app store badge.svg') }}" alt=""
-                                    onclick='window.location.href="{{ get_setting('app_store_link') }}"' />
+                                    onclick='window.location.href="{{ get_setting('app_store_link') }}"' class="img-fluid" />
                             </div>
 
                         </div>
