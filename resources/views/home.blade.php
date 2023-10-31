@@ -171,8 +171,8 @@
         @endif
 
 
-        <!-- --- Start Product Section -->
-        <section class="sec-product" id="sec-product">
+        <!-- --- Start desktop Product Section -->
+        <section class="sec-product d-none d-sm-block" id="sec-product">
             <div class="container-fluid">
                 <div class="flex-title-product">
                     <h4>{{ __('general.sec_product.title') }}</h4>
@@ -184,7 +184,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="row-flex-product">
+                <div class="row-flex-product ">
                     <div class="card-product activeCardProdut">
                         <div class="row mt-5">
                             @foreach ($top_product_stokcs_1 as $product_stock)
@@ -298,7 +298,195 @@
                 </div>
             </div>
         </section>
-        <!-- --- End Product Section -->
+        <!-- --- End desktop Product Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        <!-- --- Start mobile Product Section -->
+        <section class="sec-product d-block d-sm-none" id="sec-product">
+            <div class="container-fluid">
+                <div class="flex-title-product">
+                    <h4>{{ __('general.sec_product.title') }}</h4>
+                </div>
+                <div class="row-flex-product mb ">
+                    <div class="card-product activeCardProdut overflow-auto">
+                        <div class="row mt-5 flex-nowrap">
+                            @foreach ($top_product_stokcs_1 as $product_stock)
+                                <div class="col-sm-6 col-md-6 col-lg-3 w-75">
+                                    <div class="box-product-card">
+                                        <img class="image-product"
+                                            src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
+                                            alt="" />
+                                        <div class="content-product">
+                                            <h5>{{ $product_stock->product?->getTranslation('name') }}</h5>
+                                            <div class="flex-inof-detalis-product">
+                                                <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
+                                                <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
+                                            </div>
+                                            <div class="flex-inof-detalis-product">
+                                                <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
+                                                    alt="" />
+                                                <span>
+                                                    {{ $product_stock->product?->shop?->getAddress() }}
+                                                </span>
+                                            </div>
+                                            <div class="price-product">
+                                                <h6>{{ $product_stock->price }} {{ getSystemCurrency() }}</h6>
+                                                <h5>{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                    {{ getSystemCurrency() }}
+                                                </h5>
+                                            </div>
+                                            <div class="pos-cat-product">
+                                                <span class="bx bx-minus"></span>
+                                                <span>{{ $product_stock->discount }}</span>
+                                                <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="row mt-2 flex-nowrap">
+                            @foreach ($top_product_stokcs_2 as $product_stock)
+                                @if ($loop->index == 1)
+                                    <div class="col-sm-6 col-md-6 col-lg-3 w-75" >
+                                        <div class="box-product-card">
+                                            <div class="bg-soon">
+                                                <img src="{{ asset('assets/img/not-found.png') }}" />
+                                                <h5 data-text="Soon...">
+                                                </h5>
+                                            </div>
+                                            <div class="content-product">
+                                                <h5>MEN'S T-SHIRT Space print</h5>
+                                                <div class="flex-inof-detalis-product">
+                                                    <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
+                                                    <span>_ </span>
+                                                </div>
+                                                <div class="flex-inof-detalis-product">
+                                                    <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}">
+                                                    <span>
+                                                        _
+                                                    </span>
+                                                </div>
+                                                <div class="price-product">
+                                                    <h6>150 SR</h6>
+                                                    <h5>100 SR</h5>
+                                                </div>
+                                                <div class="pos-cat-product">
+                                                    <span class="bx bx-minus"></span>
+                                                    <span>0</span>
+                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}"
+                                                        alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                <div class="col-sm-12 col-md-6 col-lg-3 w-75">
+                                    <div class="box-product-card">
+                                        <img class="image-product"
+                                            src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
+                                            alt="" />
+                                        <div class="content-product">
+                                            <h5>{{ $product_stock->product?->getTranslation('name') }}</h5>
+                                            <div class="flex-inof-detalis-product">
+                                                <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
+                                                <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
+                                            </div>
+                                            <div class="flex-inof-detalis-product">
+                                                <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
+                                                    alt="" />
+                                                <span>
+                                                    {{ $product_stock->product?->shop?->getAddress() }}
+                                                </span>
+                                            </div>
+                                            <div class="price-product">
+                                                <h6>{{ $product_stock->price }} {{ getSystemCurrency() }}</h6>
+                                                <h5>{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                    {{ getSystemCurrency() }}
+                                                </h5>
+                                            </div>
+                                            <div class="pos-cat-product">
+                                                <span class="bx bx-minus"></span>
+                                                <span>{{ $product_stock->discount }}</span>
+                                                <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- --- End mobile Product Section -->
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- --- Start Sec-Store -->
         <section class="Sec_Store ">

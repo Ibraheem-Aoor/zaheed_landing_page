@@ -20,6 +20,11 @@ Route::get('change-lang/{locale}', [LanguageController::class, 'changeLanguage']
 
 Route::group(['middleware' => 'localization'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home2',function () {
+
+        return view('home_old2');
+
+    });
     Route::get('privacy-policy' , [HomeController::class, 'showPrivacyPolicy'])->name('privacy');
     Route::post('/contact/submit', [HomeController::class, 'submitContactForm'])->name('contact.submit');
     // partner

@@ -5,7 +5,7 @@
       }
       .image-cover-header{
         height: 500px;
-        margin-top: 70px;
+        margin-top: 44px;
       }
       .man-cover{
         position: absolute;
@@ -13,14 +13,18 @@
         bottom:0px !important;
         height: 450px !important;
       }
+      .content-cover{
+        padding: 24px 0;
+      }
       .content-cover h2{
        
-      font-size: 30px;
+      font-size: 30px !important;
+      line-height:110% !important
 
       }
       .content-cover p{
   
-        width: 100%;
+        width: 100% !important;
 
       }
       .flex-client-row{
@@ -42,8 +46,12 @@
       }
       .image-work-step{
         position: relative;
-        width: 80%;
+        width: 166.705px !important;
+        height: 340.56px !important;
         margin: 15px auto !important;
+      }
+      .image-work-step .body-image{
+        height: 340.56px !important;
       }
       .flex-title-store-viewAll h4{
         color:  #211E1E;
@@ -191,6 +199,25 @@
     .box-step-work{
       display: block;
     }
+
+    .customeRowStep2{
+
+    }
+
+    .bg-sildeRed {
+      height: 401px !important; 
+    }
+    .swiper-slide img{
+      width: 158.745px;
+      height: 337.371px ;
+    }
+    .iphone-cover{
+      width: 170.745px !important;
+      height: 352.371px !important;
+    }
+    .flex-sm-nowrap {
+      flex-wrap: nowrap !important;
+    }
 }
 /* --------------- */
 @media(min-width:576px) and (max-width:767.98px){
@@ -200,7 +227,7 @@
       }
       .image-cover-header{
         height: 500px;
-        margin-top: 95px;
+        margin-top: 44px;
       }
       .man-cover{
         position: absolute;
@@ -210,12 +237,12 @@
       }
       .content-cover h2{
        
-      font-size: 30px;
+      font-size: 30px !important;
 
       }
       .content-cover p{
   
-        width: 100%;
+        width: 100% !important;
 
       }
       .flex-client-row{
@@ -379,7 +406,7 @@
       }
       .content-cover p{
   
-        width: 100%;
+        width: 100% !important;
 
       }
       .flex-client-row{
@@ -423,7 +450,7 @@
         }
         .content-cover p{
     
-          width: 100%;
+          width: 100% !important;
   
         }
         .customeRowStep{

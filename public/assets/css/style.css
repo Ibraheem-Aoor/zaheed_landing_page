@@ -310,10 +310,10 @@ a{
   .sec-cover{
     width: 100%;
     margin: 15px auto;
-    border-radius: 15px;
+    border-radius: 32px;
      background:  #E50000;
-    padding:60px 20px;
-    height: 800px;
+    padding:0px 20px;
+    height: 655px;
   }
   .content-cover h2{
     color: #FFF;
@@ -342,16 +342,13 @@ a{
   .image-cover-header{
     position: relative;
     height: 100%;
-
     height: 700px;
-    margin-top: 40px;
   }
 
   .image-cover-header .man-cover{
-   position: absolute;
-   left: 20px;
-   bottom: 0px;
-   height: 650px;
+    position: absolute;
+    left: 20px;
+    bottom: 45px;
   }
   .image-vactor-pos .vactor-one{
     position: absolute;
@@ -371,15 +368,13 @@ a{
   .vactor-three{
     position: absolute;
     left: 40%;
-    transform: translateX(-50%);
-    top:40px;
-    transform: translateY(-50%);
+    transform: translateY(-90%);
     width: 30px;
     height: 30px;
   }
   .vactor-four{
     position: absolute;
-    left: 80%;
+    left: 88%;
     transform: translateX(-50%);
     top:30%;
     transform: translateY(-50%);
@@ -1199,7 +1194,7 @@ min-width: 70px;
   width: 100%;
   background: #FF0000;
   border-radius: 15px;
-  min-height: 100vh;
+  height: 838px;
   margin: 50px 0px;
   display: flex;
   justify-content: center;
@@ -1218,12 +1213,15 @@ min-width: 70px;
   background-position: center;
   background-size: cover;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .swiper-slide img {
   width: 100%;
-  height: 700px;
+  height: 652px;
   border-radius: 18.788px ;
 }
 /* .swiper-slide .swiper-slide-shadow-left{
@@ -1543,7 +1541,8 @@ min-width: 70px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 32%;
-  height: 91.5%;
+  height: 686px;
 }
+
 /* 
 
