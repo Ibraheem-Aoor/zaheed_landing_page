@@ -342,6 +342,7 @@ a{
   }
   .image-cover-header{
     position: relative;
+    margin-top: 20px;
     /* 
     height: 100%;
     height: 700px; */
