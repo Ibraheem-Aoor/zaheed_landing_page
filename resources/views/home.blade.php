@@ -10,12 +10,12 @@
                         <div class="content-cover">
                             {!! get_setting('about_us_description', null, App::getLocale()) !!}
                             <div class="flex-but-download-sotre row">
-                                <div class="col-6 col-sm-6 d-flex justify-content-end px-0 ">
-                                    <img class="img-fluid me-2" width="140" height="46" src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" alt=""
+                                <div class="col-12 col-sm-6 d-flex justify-content-start px-0 ">
+                                    <img class="img-fluid me-2" width="140" height="46"
+                                        src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" alt=""
                                         onclick='window.location.href="{{ get_setting('play_store_link') }}"' />
-                                </div>
-                                <div class="col-6 col-sm-6 px-0">
-                                    <img class="img-fluid" width="140" height="46"  src="{{ asset('assets/img/Mobile app store badge.svg') }}" alt=""
+                                    <img class="img-fluid" width="140" height="46"
+                                        src="{{ asset('assets/img/Mobile app store badge.svg') }}" alt=""
                                         onclick='window.location.href="{{ get_setting('app_store_link') }}"' />
                                 </div>
                             </div>
@@ -23,7 +23,8 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-5">
                         <div class="image-cover-header">
-                            <img class="man-cover img-fluid" src="{{ asset('assets/img/image-cover-header-phone.png') }}" alt="" />
+                            <img class="man-cover img-fluid" src="{{ asset('assets/img/image-cover-header-phone.png') }}"
+                                alt="" />
                         </div>
                     </div>
                 </div>
@@ -47,7 +48,8 @@
         <!-- --- End Sec_Client -->
 
         <!-- --- Start Sec-App-Works -->
-        <div class="title-tst-center-work-step" data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true" id="faqs">
+        <div class="title-tst-center-work-step" data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true"
+            id="faqs">
             <div class="container">
                 {{-- <h4>{!! get_setting('landing_page_faqs_sec_title', null, $locale) !!}</h4> --}}
                 <h4>{{ __('general.sec_app_works.title') }}</h4>
@@ -61,7 +63,8 @@
                             <img src="{{ asset('assets/img/body.png') }}" class="body-image" alt="" />
                             <div class="image-change-step-all">
                                 @foreach ($faqs as $faq)
-                                    <img id="ImageStep{{ $faq->id }}" src="{{ uploaded_asset($faq->image) }}" class="imageAll" @if ($loop->index == 0) style="display: block"  @endif 
+                                    <img id="ImageStep{{ $faq->id }}" src="{{ uploaded_asset($faq->image) }}"
+                                        class="imageAll" @if ($loop->index == 0) style="display: block" @endif
                                         alt="{{ __('general.sec_app_works.step_1.title') }}" />
                                 @endforeach
                             </div>
@@ -96,7 +99,7 @@
 
                                 @default
                             @endswitch --}}
-                            <div data-id="{{$faq->id}}"
+                            <div data-id="{{ $faq->id }}"
                                 class="box-step-work @if ($loop->index == 0) activeBoxWork @endif"
                                 data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true">
                                 <article class="art-num">
@@ -144,9 +147,9 @@
         @if (isset($landing_page_sliders) && !$landing_page_sliders->isEmpty())
             <!-- --- Start Sec Silder 3D  -->
             <section class="bg-sildeRed" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-once="true">
-                
+
                 <div class="swiper mySwiper">
-                    <img class="iphone-cover" src="{{ asset('assets/img/iphone_frame.png') }}" >
+                    <img class="iphone-cover" src="{{ asset('assets/img/iphone_frame.png') }}">
                     <div class="swiper-wrapper">
                         @foreach ($landing_page_sliders as $slider)
                             <div class="swiper-slide">
@@ -307,7 +310,7 @@
 
 
 
-        
+
 
 
 
@@ -359,7 +362,7 @@
                         <div class="row mt-2 flex-nowrap">
                             @foreach ($top_product_stokcs_2 as $product_stock)
                                 @if ($loop->index == 1)
-                                    <div class="col-sm-6 col-md-6 col-lg-3 w-75" >
+                                    <div class="col-sm-6 col-md-6 col-lg-3 w-75">
                                         <div class="box-product-card">
                                             <div class="bg-soon">
                                                 <img src="{{ asset('assets/img/not-found.png') }}" />
@@ -432,7 +435,7 @@
         </section>
         <!-- --- End mobile Product Section -->
 
-        
+
 
 
 
@@ -552,8 +555,11 @@
                 <div class="row customeRowDonwload">
                     <div class="col-sm-12 col-md-12 col-lg-6 customeOrder2 d-flex flex-column justify-content-end">
                         <div class="image-donwload-app d-flex h-75">
-                            <img class="img-fluid img-download-1" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}" alt="" />
-                            <img class="img-fluid img-download-2" src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"alt="" />
+                            <img class="img-fluid img-download-1"
+                                src="{{ uploaded_asset(get_setting('landing_page_download_app_img_1', null, $locale)) }}"
+                                alt="" />
+                            <img class="img-fluid img-download-2"
+                                src="{{ uploaded_asset(get_setting('landing_page_download_app_img_2', null, $locale)) }}"alt="" />
                             {{-- <div class="image-download-body">
                             </div>
                             <div class="image-download-body2">
@@ -565,10 +571,12 @@
                             <h3>{!! get_setting('landing_page_download_app_sec_title', null, $locale) !!}</h3>
                             <p>{!! get_setting('landing_page_download_app_sec_description', null, $locale) !!}</p>
                             <div class="flex-but-download-sotre">
-                                <img src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" class="img-fluid" alt=""
+                                <img src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" class="img-fluid"
+                                    alt=""
                                     onclick='window.location.href="{{ get_setting('play_store_link') }}"' />
                                 <img src="{{ asset('assets/img/Mobile app store badge.svg') }}" alt=""
-                                    onclick='window.location.href="{{ get_setting('app_store_link') }}"' class="img-fluid" />
+                                    onclick='window.location.href="{{ get_setting('app_store_link') }}"'
+                                    class="img-fluid" />
                             </div>
 
                         </div>
