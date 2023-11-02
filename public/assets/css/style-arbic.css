@@ -104,8 +104,15 @@
 }
 
 .image-cover-header .man-cover {
-    position: absolute;
-    right: -130px !important;
-    bottom: 0px;
-    height: 650px;
+    /* position: absolute; */
+    /* right: -130px !important; */
+    /* bottom: 0px; */
+    /* height: 650px; */
+}
+
+.img-download-2{
+    position: relative;
+    right: -96px;
+    top: 35px;
+    z-index: 1;
 }
