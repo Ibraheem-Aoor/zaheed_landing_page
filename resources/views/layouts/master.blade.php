@@ -26,8 +26,7 @@
     <meta name="twitter:site" content="@publisher_handle">
     <meta name="twitter:title" content="{{ get_setting('meta_title') }}">
     <meta name="twitter:description" content="{{ get_setting('meta_description') }}">
-    <meta name="twitter:creator"
-        content="@author_handle">
+    <meta name="twitter:creator" content="@author_handle">
       <meta name="twitter:image" content="{{ uploaded_asset(get_setting('meta_image')) }}">
 
       <!-- Open Graph data -->
@@ -71,6 +70,43 @@
     <!-- --- Start HomePage -->
     <div id="HomePage">
         @include('layouts.header')
+        <div class="sidebar">
+            <ul class=" mx-1 mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page"
+                        href="@if (Route::currentRouteName() != 'home') {{ route('home') }} @else #sec-cover @endif">{{ __('general.header.about') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#advantages">{{ __('general.header.advantages') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#sec-product">{{ __('general.header.discounts') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faqs">{{ __('general.header.faq') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">{{ __('general.header.contacts') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::currentRouteName() == 'partner.index') activeListNav @endif"
+                        href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>
+                </li>
+            </ul>
+            <form class="d-flex mx-5">
+                <div class="flex-info-header-right">
+                    <div class="box-lanag">
+                        @if (app()->getLocale() == 'en')
+                            <a href="{{ route('change_language', 'sa') }}">{{ __('general.header.arabic') }}</a>
+                        @else
+                            <a href="{{ route('change_language', 'en') }}">{{ __('general.header.english') }}</a> @endif
+                    </div>
+                </div>
+            </form>
+        </div>
+          
         @yield('content')
         @include('layouts.footer')
     </div>
@@ -88,6 +124,8 @@
         // احصل على عناصر الروابط في قائمة الـ nav
         const navLinks = document.querySelectorAll('nav a');
 
+        const sideBarLinks = document.querySelectorAll('.sidebar  a');
+
         // اضف مثيل event listener لكل عنصر
         navLinks.forEach(link => {
             link.addEventListener('click', function(event) {
@@ -102,12 +140,38 @@
 
                 // انتقل إلى القسم المرتبط بالرابط باستخدام الهاش (#)
                 const sectionId = this.getAttribute('href').substring(1);
+                console.log(sectionId)
                 const section = document.getElementById(sectionId);
                 section.scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
+
+
+        
+
+        sideBarLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                
+                // قم بإزالة اللون المحدد من كل الروابط
+                sideBarLinks.forEach(link => {
+                    link.classList.remove('activeListNav');
+                });
+
+                // قم بتعيين اللون المحدد للرابط الذي تم الضغط عليه
+                this.classList.add('activeListNav');
+
+                // انتقل إلى القسم المرتبط بالرابط باستخدام الهاش (#)
+                const sectionId = this.getAttribute('href').substring(1);
+                const section = document.getElementById(sectionId);
+                console.log(sectionId)
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+ 
     </script>
     @stack('js')
 

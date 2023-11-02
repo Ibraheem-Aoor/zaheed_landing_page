@@ -265,4 +265,21 @@ var swiper = new Swiper(".mySwiper", {
 
 });
 
+
+document.getElementById("sidebar-toggle").addEventListener("click", function() {
+    document.querySelector(".sidebar").classList.toggle("active");
+    document.querySelector("#HeaderPage").classList.toggle("sticky");
+
+
+    
+  });
+  
+
+
+
+
+
+
+
+
 AOS.init();

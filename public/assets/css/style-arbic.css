@@ -112,7 +112,15 @@
 
 .img-download-2{
     position: relative;
-    right: -96px;
-    top: 35px;
+    right: -124px;
+    top: 54px;
     z-index: 1;
+}
+
+.navbar .container {
+    flex-direction: row !important;
+}
+
+.navbar .container .d-flex.align-items-center {
+    flex-direction: row !important;
 }

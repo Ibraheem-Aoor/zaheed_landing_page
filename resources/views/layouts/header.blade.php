@@ -1,31 +1,40 @@
 <!-- -- Start Header -->
 <header class="headerPage" id="HeaderPage">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('assets/img/Group.svg') }}" alt="" />
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="bx bx-menu-alt-left"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container ">
+            <div class="but-app d-block d-sm-none">
+                @php
+                    $app_link = getUserAgent() == 'Chrome' ? get_setting('play_store_link') : get_setting('app_store_link');
+                @endphp
+                <a href="{{ $app_link }}">{{ __('general.header.getApp') }}</a>
+            </div>
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <img class="mx-1" src="{{ asset('assets/img/Group.svg') }}" alt="" />
+                </a>
+                <button class="navbar-toggler " id="sidebar-toggle" type="button"
+                    aria-label="Toggle navigation">
+                    <span class="bx bx-menu-alt-left"></span>
+                </button>
+            </div>
+
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page"
                             href="@if (Route::currentRouteName() != 'home') {{ route('home') }} @else #sec-cover @endif">{{ __('general.header.about') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="{{ route('home') }}#advantages">{{ __('general.header.advantages') }}</a>
+                            href="#advantages">{{ __('general.header.advantages') }}</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link"
-                            href="{{ route('home') }}#sec-product">{{ __('general.header.discounts') }}</a>
-                    </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}#faqs">{{ __('general.header.faq') }}</a>
+                        <a class="nav-link"
+                            href="#sec-product">{{ __('general.header.discounts') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faqs">{{ __('general.header.faq') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">{{ __('general.header.contacts') }}</a>
@@ -43,12 +52,6 @@
                             @else
                                 <a href="{{ route('change_language', 'en') }}">{{ __('general.header.english') }}</a>
                             @endif
-                        </div>
-                        <div class="but-app">
-                            @php
-                                $app_link = getUserAgent() == 'Chrome' ? get_setting('play_store_link') : get_setting('app_store_link');
-                            @endphp
-                            <a href="{{ $app_link }}">{{ __('general.header.getApp') }}</a>
                         </div>
                     </div>
                 </form>
