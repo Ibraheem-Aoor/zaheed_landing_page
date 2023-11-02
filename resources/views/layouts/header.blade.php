@@ -1,6 +1,6 @@
 <!-- -- Start Header -->
 <header class="headerPage" id="HeaderPage">
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container ">
             <div class="but-app d-block d-sm-none">
                 @php
@@ -55,6 +55,9 @@
                         </div>
                     </div>
                 </form>
+                <div class="but-app d-none d-sm-block">
+                    <a href="">Get App</a>
+            </div>
             </div>
         </div>
     </nav>

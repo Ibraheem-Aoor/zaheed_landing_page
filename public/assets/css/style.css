@@ -1615,11 +1615,11 @@ min-width: 70px;
 }
 
 .navbar .container {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 .navbar .container .d-flex.align-items-center {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 .box-lanag{
@@ -1630,6 +1630,10 @@ align-items: center;
 gap: 8px;
 border-radius: 8px;
 border: 1px solid #E1E1E1;
+}
+
+.box-lanag a {
+  color: #000;
 }
 /* 
 

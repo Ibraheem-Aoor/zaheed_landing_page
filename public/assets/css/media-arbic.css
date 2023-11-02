@@ -2,4 +2,13 @@
     .pos-tag-top{
         right: 80% !important;
     }
+
+    .navbar .container {
+        flex-direction: row-reverse !important;
+      }
+  
+      .navbar .container .d-flex.align-items-center {
+        flex-direction: row-reverse  !important;
+      }
+
 }

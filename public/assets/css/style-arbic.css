@@ -116,11 +116,3 @@
     top: 54px;
     z-index: 1;
 }
-
-.navbar .container {
-    flex-direction: row !important;
-}
-
-.navbar .container .d-flex.align-items-center {
-    flex-direction: row !important;
-}

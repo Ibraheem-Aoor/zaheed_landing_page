@@ -71,7 +71,8 @@
     <div id="HomePage">
         @include('layouts.header')
         <div class="sidebar">
-            <ul class=" mx-1 mb-2 mb-lg-0">
+            
+            <ul class=" mx-1 mb-2 mb-lg-0 @if (app()->getLocale() == 'sa') pe-4 @endif ">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page"
                         href="@if (Route::currentRouteName() != 'home') {{ route('home') }} @else #sec-cover @endif">{{ __('general.header.about') }}</a>
