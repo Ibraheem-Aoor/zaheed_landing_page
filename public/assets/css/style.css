@@ -335,7 +335,7 @@ a{
     margin: 25px 0px;
   }
   .flex-but-download-sotre img{
-    height: 45px;
+    /* height: 45px; */
 
     cursor: pointer;
 
@@ -807,6 +807,8 @@ a{
   font-style: normal;
   font-weight: 400;
   line-height: 130%; /* 23.4px */
+  width: auto !important;
+  di
 }
 .content-form-footer h2{
   color: #FFF;
@@ -1073,6 +1075,9 @@ a{
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .price-product{
   display: flex;
@@ -1545,7 +1550,7 @@ min-width: 70px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 32%;
+  /* width: 32%; */
   height: 686px;
 }
 

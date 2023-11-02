@@ -158,9 +158,9 @@
         display: flex !important;
         align-items: center !important;
       }
-      .flex-but-download-sotre img:last-child{
+      /* .flex-but-download-sotre img:last-child{
         margin: 0px 5px;
-      }
+      } */
       .footer{
         background: #1C1919;
         padding: 15px !important;
@@ -223,7 +223,7 @@
     }
 
     .box-product-card {
-      height: 424px !important;
+      /* height: 424px !important; */
     }
 }
 /* --------------- */
@@ -395,7 +395,7 @@
 /* **************** */
 @media(min-width:768px) and (max-width:991.98px){
   .sec-cover{
-    min-height: 1200px !important;
+    /* min-height: 1200px !important; */
     overflow: hidden;
   }
   /* .image-cover-header{

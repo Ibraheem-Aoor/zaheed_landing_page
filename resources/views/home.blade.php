@@ -9,11 +9,15 @@
                     <div class="col-sm-12 col-md-12 col-lg-7">
                         <div class="content-cover">
                             {!! get_setting('about_us_description', null, App::getLocale()) !!}
-                            <div class="flex-but-download-sotre">
-                                <img src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" alt=""
-                                    onclick='window.location.href="{{ get_setting('play_store_link') }}"' />
-                                <img src="{{ asset('assets/img/Mobile app store badge.svg') }}" alt=""
-                                    onclick='window.location.href="{{ get_setting('app_store_link') }}"' />
+                            <div class="flex-but-download-sotre row">
+                                <div class="col-6 col-sm-6 d-flex justify-content-end px-0 ">
+                                    <img class="img-fluid me-2" width="140" height="46" src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" alt=""
+                                        onclick='window.location.href="{{ get_setting('play_store_link') }}"' />
+                                </div>
+                                <div class="col-6 col-sm-6 px-0">
+                                    <img class="img-fluid" width="140" height="46"  src="{{ asset('assets/img/Mobile app store badge.svg') }}" alt=""
+                                        onclick='window.location.href="{{ get_setting('app_store_link') }}"' />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,7 +185,7 @@
                             @foreach ($top_product_stokcs_1 as $product_stock)
                                 <div class="col-sm-12 col-md-6 col-lg-3">
                                     <div class="box-product-card">
-                                        <img class="image-product"
+                                        <img class="image-product img-fluid"
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
@@ -253,7 +257,7 @@
                                 @endif
                                 <div class="col-sm-12 col-md-6 col-lg-3">
                                     <div class="box-product-card">
-                                        <img class="image-product"
+                                        <img class="image-product img-fluid"
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
@@ -320,7 +324,7 @@
                             @foreach ($top_product_stokcs_1 as $product_stock)
                                 <div class="col-sm-6 col-md-6 col-lg-3 w-75">
                                     <div class="box-product-card">
-                                        <img class="image-product"
+                                        <img class="image-product img-fluid"
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
@@ -390,7 +394,7 @@
                                 @endif
                                 <div class="col-sm-12 col-md-6 col-lg-3 w-75">
                                     <div class="box-product-card">
-                                        <img class="image-product"
+                                        <img class="image-product img-fluid"
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
