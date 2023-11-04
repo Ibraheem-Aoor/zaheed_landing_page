@@ -192,7 +192,7 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <h5>{{ $product_stock->product?->getTranslation('name') }}</h5>
+                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
@@ -331,7 +331,7 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <h5>{{ $product_stock->product?->getTranslation('name') }}</h5>
+                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
@@ -370,7 +370,7 @@
                                                 </h5>
                                             </div>
                                             <div class="content-product">
-                                                <h5>MEN'S T-SHIRT Space print</h5>
+                                                <div class="product-title">MEN'S T-SHIRT Space print</div>
                                                 <div class="flex-inof-detalis-product">
                                                     <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                     <span>_ </span>
@@ -401,7 +401,7 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <h5>{{ $product_stock->product?->getTranslation('name') }}</h5>
+                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
