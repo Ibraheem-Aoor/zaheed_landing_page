@@ -52,7 +52,7 @@
             id="faqs">
             <div class="container">
                 {{-- <h4>{!! get_setting('landing_page_faqs_sec_title', null, $locale) !!}</h4> --}}
-                <h4>{{ __('general.sec_app_works.title') }}</h4>
+                <div>{{ __('general.sec_app_works.title') }}</div>
             </div>
         </div>
         <section class="sec-app-work" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
@@ -128,7 +128,7 @@
                     @foreach ($features as $feature)
                         <div class="col-sm-12 col-md-6 col-lg-3 customeAd">
                             <div class="box-advantages">
-                                <div class="box-bg-adv">
+                                <div class="box-bg-adv mb-2">
                                     <img src="{{ uploaded_asset($feature->image) }}"
                                         alt="{{ __('general.advantages.advantage_1.title') }}" />
                                 </div>
@@ -204,11 +204,11 @@
                                                     {{ $product_stock->product?->shop?->getAddress() }}
                                                 </span>
                                             </div>
-                                            <div class="price-product">
-                                                <h6>{{ $product_stock->price }} {{ getSystemCurrency() }}</h6>
-                                                <h5>{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                            <div class="price-product mt-2 mb-1 mt-sm-4 mb-sm-2">
+                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
-                                                </h5>
+                                                </div>
+                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -233,7 +233,7 @@
                                                 </h5>
                                             </div>
                                             <div class="content-product">
-                                                <h5>MEN'S T-SHIRT Space print</h5>
+                                                <div class="product-title">MEN'S T-SHIRT Space print</div>
                                                 <div class="flex-inof-detalis-product">
                                                     <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                     <span>_ </span>
@@ -264,7 +264,7 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <h5>{{ $product_stock->product?->getTranslation('name') }}</h5>
+                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
@@ -552,7 +552,7 @@
         <!-- --- Startr Sec_Get_App_Download -->
         <section class="sec-get-app-donwload" id="app">
             <div class="container-fluid">
-                <div class="row customeRowDonwload">
+                <div class="row customeRowDonwload px-sm-5">
                     <div class="col-sm-12 col-md-12 col-lg-6 customeOrder2 d-flex flex-column justify-content-end">
                         <div class="image-donwload-app d-flex h-75">
                             <img class="img-fluid img-download-1"

@@ -117,11 +117,14 @@
       .image-download-body2 .imageBody{
         width: 250px !important;
       }
+      .content-download-image{
+        margin-top: 12px !important;
+      }
       .content-download-image h3{
         font-size: 25px;
       }
       .content-download-image p{
-        width: 100%;
+        width: 100% !important;
       }
       .title-massage h4{
         font-size: 25px;
@@ -346,11 +349,14 @@
         left: 80px;
         z-index: 1;
       }
+      .content-download-image{
+        margin-top: 24px !important;
+      }
       .content-download-image h3{
         font-size: 25px;
       }
       .content-download-image p{
-        width: 100%;
+        width: 100% !important;
       }
       .title-massage h4{
         font-size: 25px;

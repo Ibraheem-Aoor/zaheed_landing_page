@@ -37,14 +37,25 @@
       <meta property="og:description" content="{{ get_setting('meta_description') }}" />
       <meta property="og:site_name" content="{{ env('APP_NAME') }}" />
       <meta property="fb:app_id" content="{{ env('FACEBOOK_PIXEL_ID') }}">
+      
     <!-- -- Start Css -->
     {{-- <link rel="preconnect" href="https://fonts.googleapis.com" /> --}}
     {{-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> --}}
     {{-- <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cairo:wght@200;300&family=Changa:wght@200;300&family=Lato:wght@300&family=Libre+Franklin:wght@300&family=Lobster&family=Noto+Sans&family=Poppins:wght@200;300&family=Prompt:wght@300&family=Raleway:wght@200&family=Roboto+Slab:wght@200&family=Roboto:wght@100&family=Scheherazade+New&family=Tajawal:wght@200;300;700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet" /> --}}
     <!-- --- Start Icon -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    
     <!-- --- Start Custome Css -->
-
+    {{-- <link rel="preload" as="font" href="{{ asset('assets/font/user/static/Urbanist-Regular.ttf') }}" type="font/ttf" crossorigin="anonymous"> --}}
+    {{-- <style>
+        @font-face {
+          font-family: 'Urbanist';
+          src: url('{{ asset("assets/font/user/static/Urbanist-Regular.ttf") }}') format('truetype');
+        }
+        
+        body {
+          font-family: 'Urbanist', sans-serif;
+        }
+      </style> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -58,6 +69,11 @@
         <link rel="stylesheet" href="{{ asset('assets/css/media-arbic.css') }}?v=0.04"> @endif
     <link rel="stylesheet"
         href="{{ asset('assets/css/toastr.min.css') }}">
+
+        <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
+      />
 
     @stack('css')
 </head>
