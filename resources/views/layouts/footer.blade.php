@@ -4,7 +4,7 @@
         $locale = app()->getLocale();
     @endphp
     <div class="container-fluid">
-        <div class="contact-form">
+        <div class="contact-form px-1 px-sm-4">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="content-contact-form">

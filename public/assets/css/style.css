@@ -589,7 +589,7 @@ a{
   height: 60px;
 }
 .content-store{
-  margin: 0px 20px;
+  /* margin: 0px 20px; */
 }
 .pos-tag-top{
   min-width: 60px;
@@ -612,17 +612,17 @@ a{
 }
 .content-store h4{
   overflow: hidden;
-  color: #22262D;
+  color: var(--dark-50, #211E1E);
   text-overflow: ellipsis;
-  font-family: Poppins;
-  font-size: 24px;
+  font-family: Urbanist;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 32px; /* 133.333% */
+  line-height: 140%; /* 25.2px */
 }
 .content-store h6{
   color: #636363;
-  font-family: Poppins;
+  font-family: Urbanist;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

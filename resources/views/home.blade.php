@@ -277,10 +277,10 @@
                                                 </span>
                                             </div>
                                             <div class="price-product">
-                                                <h6>{{ $product_stock->price }} {{ getSystemCurrency() }}</h6>
-                                                <h5>{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
-                                                </h5>
+                                                </div>
+                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -344,10 +344,10 @@
                                                 </span>
                                             </div>
                                             <div class="price-product">
-                                                <h6>{{ $product_stock->price }} {{ getSystemCurrency() }}</h6>
-                                                <h5>{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
-                                                </h5>
+                                                </div>
+                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -414,10 +414,10 @@
                                                 </span>
                                             </div>
                                             <div class="price-product">
-                                                <h6>{{ $product_stock->price }} {{ getSystemCurrency() }}</h6>
-                                                <h5>{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
-                                                </h5>
+                                                </div>
+                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -491,7 +491,6 @@
             <div class="container-fluid">
                 <div class="flex-title-store-viewAll">
                     <h4>{{ __('general.sec_store.title') }}</h4>
-                    <a href="">{{ __('general.view_all') }} </a>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6 customeColumeTopStore">
@@ -503,7 +502,7 @@
                                             <article class="art-logo">
                                                 <img src="{{ uploaded_asset($shop->logo) }}" alt="" />
                                             </article>
-                                            <article class="content-store">
+                                            <article class="content-store mx-0 mx-sm-2 ">
                                                 <h4>{{ $shop->getTranslation('name') }}</h4>
                                                 <h6>{{ $shop->getCategroiesNamesString() }}</h6>
                                                 <div class="info-detalis-store">
@@ -528,7 +527,7 @@
                                             <article class="art-logo">
                                                 <img src="{{ uploaded_asset($shop->logo) }}" alt="" />
                                             </article>
-                                            <article class="content-store">
+                                            <article class="content-store mt-2 mt-sm-0 mx-0 mx-sm-2">
                                                 <h4>{{ $shop->getTranslation('name') }}</h4>
                                                 <h6>{{ $shop->getCategroiesNamesString() }}</h6>
                                                 <div class="info-detalis-store">
