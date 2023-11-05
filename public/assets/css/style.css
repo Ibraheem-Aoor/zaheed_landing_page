@@ -406,7 +406,7 @@ a{
   border-radius: 24px;
   border: 1px solid #E1E1E1;
   background: #F8F8F8;
-  padding:60px 20px;
+  /* padding:60px 20px; */
 
 }
 .title-tst-center-work-step{
@@ -427,7 +427,6 @@ a{
 .box-step-work{
   display: flex;
   width: 100%;
-  min-height: 150px;
   padding: 24px 32px;
   align-items: center;
   gap: 24px;
@@ -436,6 +435,17 @@ a{
   background: #FFF;
   margin: 20px auto;
   cursor: pointer;
+  height: fit-content;
+  /* min-height: 150px; */
+}
+
+.box-step-work .question h4 {
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 25.2px */
+  margin-bottom: 0;
 }
 .box-step-work .art-num h2{
   color: var(--brand-brand-main, var(--Brand, #E50000));
@@ -446,7 +456,6 @@ a{
   line-height: 110%; /* 57.2px */ /* 57.2px */
 }
 .box-step-work .content-work h4{
-  color: var(--brand-brand-main, var(--Brand, #E50000));
   font-family: Urbanist;
   font-size: 20px;
   font-style: normal;
@@ -461,6 +470,7 @@ a{
   font-weight: 500;
   line-height: 24px; /* 150% */
 }
+
 .image-work-step{
   position: relative;
   width: 80%;
@@ -811,7 +821,6 @@ a{
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
 }
 .content-contact-form h4{
   color: var(--basic-white, #FFF);
@@ -1152,10 +1161,10 @@ min-width: 70px;
   font-weight: 800;
   line-height: 100%;
 }
-.footer .row{
+/* .footer .row{
   margin: 30px 0px;
   padding: 50px 0px;
-}
+} */
 .logo-footer .imageFooterLogo{
   width: 160px;
   height: 50px;

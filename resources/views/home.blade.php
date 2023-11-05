@@ -55,7 +55,7 @@
                 <div>{{ __('general.sec_app_works.title') }}</div>
             </div>
         </div>
-        <section class="sec-app-work" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+        <section class="sec-app-work py-0 py-sm-4" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-4 customeRowStep">
@@ -70,35 +70,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-8 customeRowStep2">
+                    <div class="col-sm-12 col-md-12 col-lg-8 customeRowStep2  d-none d-sm-block ">
                         @foreach ($faqs as $faq)
-                            {{-- @switch($loop->index)
-                                @case(0)
-                                    @php
-                                        $box_id = 'BoxOneStep';
-                                    @endphp
-                                @break
-
-                                @case(1)
-                                    @php
-                                        $box_id = 'BoxTowStep';
-                                    @endphp
-                                @break
-
-                                @case(2)
-                                    @php
-                                        $box_id = 'BoxThreeStep';
-                                    @endphp
-                                @break
-
-                                @case(3)
-                                    @php
-                                        $box_id = 'BoxThreeStep';
-                                    @endphp
-                                @break
-
-                                @default
-                            @endswitch --}}
                             <div data-id="{{ $faq->id }}"
                                 class="box-step-work @if ($loop->index == 0) activeBoxWork @endif"
                                 data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true">
@@ -113,8 +86,28 @@
                                 </article>
                             </div>
                         @endforeach
-
                     </div>
+
+
+                    <div class="col-sm-12 col-md-12 col-lg-8 customeRowStep2 d-flex overflow-auto d-sm-none">
+                        @foreach ($faqs as $faq)
+                            <div data-id="{{ $faq->id }}"
+                                class="d-flex flex-column align-items-start  box-step-work @if ($loop->index == 0) activeBoxWork @endif"
+                                data-aos="zoom-in" data-aos-duration="1500" data-aos-once="true">
+                                <div class="art-num">
+                                    <h2>{{ $loop->index + 1 }}</h2>
+                                </div>
+                                <div class="question">
+                                    <h4>{{ $faq->getTranslation('question') }}</h4>
+                                </div>
+                                <div class="answer">
+                                    {{ $faq->getTranslation('answer') }}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+
                 </div>
             </div>
         </section>
@@ -192,7 +185,8 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
+                                            <div class="product-title">
+                                                {{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
@@ -205,10 +199,12 @@
                                                 </span>
                                             </div>
                                             <div class="price-product mt-2 mb-1 mt-sm-4 mb-sm-2">
-                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                <div class="discounted-price">
+                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
                                                 </div>
-                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
+                                                <div class="original-price">{{ $product_stock->price }}
+                                                    {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -264,7 +260,8 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
+                                            <div class="product-title">
+                                                {{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
@@ -277,10 +274,12 @@
                                                 </span>
                                             </div>
                                             <div class="price-product">
-                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                <div class="discounted-price">
+                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
                                                 </div>
-                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
+                                                <div class="original-price">{{ $product_stock->price }}
+                                                    {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -302,19 +301,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- --- Start mobile Product Section -->
         <section class="sec-product d-block d-sm-none" id="sec-product">
             <div class="container-fluid">
@@ -331,7 +317,8 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
+                                            <div class="product-title">
+                                                {{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
@@ -344,10 +331,12 @@
                                                 </span>
                                             </div>
                                             <div class="price-product">
-                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                <div class="discounted-price">
+                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
                                                 </div>
-                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
+                                                <div class="original-price">{{ $product_stock->price }}
+                                                    {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -401,7 +390,8 @@
                                             src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
                                             alt="" />
                                         <div class="content-product">
-                                            <div class="product-title">{{ $product_stock->product?->getTranslation('name') }}</div>
+                                            <div class="product-title">
+                                                {{ $product_stock->product?->getTranslation('name') }}</div>
                                             <div class="flex-inof-detalis-product">
                                                 <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
                                                 <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
@@ -414,10 +404,12 @@
                                                 </span>
                                             </div>
                                             <div class="price-product">
-                                                <div class="discounted-price">{{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
+                                                <div class="discounted-price">
+                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
                                                     {{ getSystemCurrency() }}
                                                 </div>
-                                                <div class="original-price" >{{ $product_stock->price }} {{ getSystemCurrency() }}</div>
+                                                <div class="original-price">{{ $product_stock->price }}
+                                                    {{ getSystemCurrency() }}</div>
                                             </div>
                                             <div class="pos-cat-product">
                                                 <span class="bx bx-minus"></span>
@@ -434,56 +426,6 @@
             </div>
         </section>
         <!-- --- End mobile Product Section -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <!-- --- Start Sec-Store -->
