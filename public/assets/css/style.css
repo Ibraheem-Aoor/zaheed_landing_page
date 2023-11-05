@@ -435,7 +435,7 @@ a{
   background: #FFF;
   margin: 20px auto;
   cursor: pointer;
-  height: fit-content;
+  /* height: fit-content; */
   /* min-height: 150px; */
 }
 

@@ -200,11 +200,12 @@
     .box-step-work {
       gap: 6px !important;
       padding: 16px !important;
-      min-height: 200px;
+      /* min-height: 200px; */
       /* max-height: 230px; */
     }
 
     .customeRowStep2 {
+      align-items: stretch;
       gap: 20px;
     }
 
