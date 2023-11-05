@@ -17,7 +17,7 @@
         width: 72% !important;
     }
     .content-cover {
-        padding: 24px 0;
+        padding-top: 16px 0;
     }
     .content-cover h2 {
         font-size: 30px !important;
@@ -437,6 +437,44 @@
     .price-product .original-price {
         font-size: 20px !important;
     }
+
+    
+    .price-product .discounted-price {
+      font-size: 14px !important;
+  }
+  .price-product .original-price {
+      font-size: 20px !important;
+  }
+
+  .box-step-work .question h4 {
+    width: 189px;
+
+  }
+  .box-step-work .answer{
+    min-height: 100px;
+    width: 218px;
+  }
+
+  .box-step-work .art-num {
+      display: flex;
+      width: 44px;
+      padding: 8px 4px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      background: rgba(229, 0, 0, 0.05);
+  }
+
+  .box-step-work .art-num h2 {
+      color: var(--brand-brand-main, var(--Brand, #e50000));
+      font-family: Urbanist;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%; /* 28px */
+      margin-bottom: 0;
+  }
 }
 /* **************** */
 @media (min-width: 768px) and (max-width: 991.98px) {
