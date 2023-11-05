@@ -41,7 +41,8 @@
     <!-- -- Start Css -->
     {{-- <link rel="preconnect" href="https://fonts.googleapis.com" /> --}}
     {{-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> --}}
-    {{-- <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cairo:wght@200;300&family=Changa:wght@200;300&family=Lato:wght@300&family=Libre+Franklin:wght@300&family=Lobster&family=Noto+Sans&family=Poppins:wght@200;300&family=Prompt:wght@300&family=Raleway:wght@200&family=Roboto+Slab:wght@200&family=Roboto:wght@100&family=Scheherazade+New&family=Tajawal:wght@200;300;700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet" /> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+
     <!-- --- Start Icon -->
     
     <!-- --- Start Custome Css -->
