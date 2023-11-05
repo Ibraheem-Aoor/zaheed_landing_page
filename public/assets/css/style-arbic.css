@@ -116,3 +116,9 @@
     top: 54px;
     z-index: 1;
 }
+
+.content-cover h2 , .advantages h3 , .content-download-image h3,.title-massage h4 , .content-massage h4 {
+
+
+    font-family: 'Tajawal', sans-serif !important;
+}
