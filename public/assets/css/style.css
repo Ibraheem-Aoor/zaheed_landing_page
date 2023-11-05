@@ -1663,5 +1663,11 @@ border: 1px solid #E1E1E1;
 .box-lanag a {
   color: #000;
 }
+
+/* CUSTOM WIDTHS */
+.w-10, .w-xs-10 { width: 10%!important; }
+.w-15, .w-xs-15 { width: 15%!important; }
+.w-20, .w-xs-20 { width: 20%!important; }
+
 /* 
 

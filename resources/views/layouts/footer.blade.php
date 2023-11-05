@@ -7,7 +7,7 @@
         <div class="contact-form px-3 px-sm-4 py-2 my-5 py-sm-5">
             <div class="row mt-0 pt-2 mt-sm-0 pt-sm-0 ">
                 <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="content-contact-form">
+                    <div class="content-contact-form w-100 w-sm-75">
                         <h4>   {!! get_setting('landing_page_contact_sec_title', null, $locale) !!}</h4>
                         <p> {!! get_setting('landing_page_contact_us_sec_description', null, $locale) !!}</p>
                     </div>
