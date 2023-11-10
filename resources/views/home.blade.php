@@ -3,7 +3,7 @@
     <!-- --- Start Main -->
     <main id="Main">
         <!-- -- Start Sec-Cover -->
-        <section class="sec-cover" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true" id="sec-cover">
+        <section class="sec-cover pt-5 pt-sm-0" data-aos="fade-up" data-aos-duration="1500" data-aos-once="true" id="sec-cover">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-sm-12 col-md-12 col-lg-7">
