@@ -2,13 +2,14 @@
 <header class="headerPage" id="HeaderPage">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container flex-nowrap">
-            <div class="but-app d-block d-sm-none">
+            {{-- <div class=""></div> --}}
+            {{-- <div class="but-app d-block d-sm-none">
                 @php
                     $app_link = getUserAgent() == 'Chrome' ? get_setting('play_store_link') : get_setting('app_store_link');
                 @endphp
                 <a href="{{ $app_link }}">{{ __('general.header.getApp') }}</a>
-            </div>
-            <div class="d-flex align-items-center">
+            </div> --}}
+            <div class="d-flex align-items-center justify-content-between">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="mx-1" src="{{ asset('assets/img/Group.svg') }}" alt="" />
                 </a>
