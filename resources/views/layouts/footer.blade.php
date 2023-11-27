@@ -50,7 +50,7 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <div class="foot-content">
-                    <h4>{{ __('general.footer.sitemap_title') }}</h4>
+                    {{-- <h4>{{ __('general.footer.sitemap_title') }}</h4> --}}
                     <div class="flex-info-footer-contact">
                         <i class="bx bx-map"></i>
                         <span>{{ __('general.footer.location_icon') }}</span>
@@ -63,7 +63,7 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <div class="foot-content">
-                    <h4>{{ __('general.footer.sitemap_title') }}</h4>
+                    {{-- <h4>{{ __('general.footer.sitemap_title') }}</h4> --}}
                     <div class="link-page">
                         <a href="{{ route('home') }}">{{ __('general.footer.home') }}</a>
                         <a href="{{ route('home') }}">{{ __('general.footer.about') }}</a>
