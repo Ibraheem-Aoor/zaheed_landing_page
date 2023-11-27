@@ -90,27 +90,27 @@
         <div class="sidebar">
             
             <ul class=" mx-1 mb-2 mb-lg-0 @if (app()->getLocale() == 'sa') pe-4 @endif ">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" aria-current="page"
                         href="@if (Route::currentRouteName() != 'home') {{ route('home') }} @else #sec-cover @endif">{{ __('general.header.about') }}</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link"
                         href="#advantages">{{ __('general.header.advantages') }}</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link"
                         href="#sec-product">{{ __('general.header.discounts') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#faqs">{{ __('general.header.faq') }}</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::currentRouteName() == 'partner.index') activeListNav @endif"
+                    href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">{{ __('general.header.contacts') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @if (Route::currentRouteName() == 'partner.index') activeListNav @endif"
-                        href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>
                 </li>
             </ul>
             <form class="d-flex mx-5">

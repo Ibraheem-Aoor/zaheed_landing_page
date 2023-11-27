@@ -11,7 +11,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-sm-12 col-md-12 col-lg-7">
-                        <div class="content-cover">
+                        <div class="content-cover mx-2">
                             {!! get_setting('about_us_description', null, App::getLocale()) !!}
                             <div class="flex-but-download-sotre row">
                                 <div class="col-12 col-sm-6 d-flex justify-content-start px-0 ">
@@ -167,12 +167,11 @@
 
 
         <!-- --- Start desktop Product Section -->
-        <section class="sec-product d-none d-sm-block" id="sec-product">
+        {{-- <section class="sec-product d-none d-sm-block" id="sec-product">
             <div class="container-fluid">
                 <div class="flex-title-product">
                     <h4>{{ __('general.sec_product.title') }}</h4>
                     <article class="info-right-product">
-                        {{-- <a href="">{{ __('general.sec_product.view_all') }}</a> --}}
                         <div class="arrow-action-product">
                             <span id="prevs" onclick="prevSilder();" class="bx bx bx-chevron-left"></span>
                             <span id="nexts" onclick="nextSilder();" class="bx bx bx-chevron-right"></span>
@@ -298,7 +297,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- --- End desktop Product Section -->
 
 
@@ -306,7 +305,7 @@
 
 
         <!-- --- Start mobile Product Section -->
-        <section class="sec-product d-block d-sm-none" id="sec-product">
+        {{-- <section class="sec-product d-block d-sm-none" id="sec-product">
             <div class="container-fluid">
                 <div class="flex-title-product">
                     <h4>{{ __('general.sec_product.title') }}</h4>
@@ -428,12 +427,12 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- --- End mobile Product Section -->
 
 
         <!-- --- Start Sec-Store -->
-        <section class="Sec_Store ">
+        {{-- <section class="Sec_Store ">
             <div class="container-fluid">
                 <div class="flex-title-store-viewAll">
                     <h4>{{ __('general.sec_store.title') }}</h4>
@@ -490,7 +489,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- --- End Sec_Store -->
 
 
