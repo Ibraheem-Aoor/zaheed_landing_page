@@ -9,6 +9,7 @@
                 @endphp
                 <a href="{{ $app_link }}">{{ __('general.header.getApp') }}</a>
             </div> --}}
+            <!-- xxxx -->
             <div class="d-flex align-items-center justify-content-between">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="mx-1" src="{{ asset('assets/img/Group.svg') }}" alt="" />
