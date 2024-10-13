@@ -17,21 +17,20 @@
     <meta name="keywords" content="@yield('meta_keywords', get_setting('meta_keywords'))">
     @yield('meta')
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="{{ get_setting('meta_title') }}">
+    <meta itemprop="name" content="{{ get_setting('meta_title')  . ' | ' . get_setting('site_motto')}}">
     <meta itemprop="description" content="{{ get_setting('meta_description') }}">
     <meta itemprop="image" content="{{ uploaded_asset(get_setting('meta_image')) }}">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="product">
     <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="{{ get_setting('meta_title') }}">
+    <meta name="twitter:title" content="{{ get_setting('meta_title') . ' | ' . get_setting('site_motto') }}">
     <meta name="twitter:description" content="{{ get_setting('meta_description') }}">
     <meta name="twitter:creator"
         content="@author_handle">
       <meta name="twitter:image" content="{{ uploaded_asset(get_setting('meta_image')) }}">
-
       <!-- Open Graph data -->
-      <meta property="og:title" content="{{ get_setting('meta_title') }}" />
+      <meta property="og:title" content="{{ get_setting('meta_title') . ' | ' . get_setting('site_motto') }}" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="{{ route('home') }}" />
       <meta property="og:image" content="{{ uploaded_asset(get_setting('meta_image')) }}" />
