@@ -97,4 +97,25 @@ class HomeController extends Controller
         $data['page'] = Page::where('slug', 'privacy-policy')->first();
         return view('privacy_policy', $data);
     }
+    /**
+     * About Us page
+     */
+    public function showAboutPage()
+    {
+        $data['content'] = get_setting('about_us_page' , null  , app()->getLocale());
+        return view('about_us', data: $data);
+    }
+
+    /**
+     * Shows a page by its slug
+     *
+     * @param string $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function showPage($slug)
+    {
+        $data['page'] = Page::whereSlug($slug)->firstOrFail();
+        return view('page', $data);
+    }
 }
+

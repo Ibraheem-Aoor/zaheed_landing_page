@@ -8,9 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endpush
 @section('content')
-@php
-    $locale = app()->getLocale();
-@endphp
+    @php
+        $locale = app()->getLocale();
+    @endphp
     <!-- --- Start Main -->
     <main id="">
         <!-- --- Start Bg Red -->
@@ -81,7 +81,7 @@
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.store_name_english') }}
                                     <span>*</span></label>
-                                <input type="text" required
+                                <input type="text"
                                     placeholder="{{ __('general.partner_registration.store_name_english') }}"
                                     name="store_name_en" class="en-only" />
                             </div>
@@ -89,17 +89,17 @@
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.store_name_arabic') }}
                                     <span>*</span></label>
-                                <input required type="text"
-                                    placeholder="{{ __('general.partner_registration.enter_name') }}" name="store_name_ar"
-                                    class="ar-only" />
+                                <input type="text" placeholder="{{ __('general.partner_registration.enter_name') }}"
+                                    name="store_name_ar" class="ar-only" />
                             </div>
                             <div class="all-input-failds-partner">
-                                <label for="" class="lab-tst">{{ __('general.partner_registration.category') }}
+                                <label for="" class="lab-tst">{{ __('general.partner_registration.store_type') }}
                                     <span>*</span></label>
-                                <select class="form-select js-example-disabled-results" required
+                                <select class="form-select js-example-disabled-results"
                                     aria-label="{{ __('general.partner_registration.select_category') }}"
                                     name="category_id">
-                                    <option>{{ __('general.partner_registration.select_category') }}</option>
+                                    <option value="">{{ __('general.partner_registration.select_category') }}
+                                    </option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->getTranslation('name') }}
                                         </option>
@@ -111,35 +111,35 @@
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.number_of_branches') }}</label>
                                 <input type="text" placeholder="{{ __('general.partner_registration.enter_number') }}"
-                                    required name="number_of_branches" class="numeric-only" />
+                                    name="number_of_branches" class="numeric-only" />
                             </div>
                             <!-- ------ -->
-                            <div class="all-input-failds-partner">
+                            {{-- <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.user_name_english') }}</label>
-                                <input type="text" required
+                                <input  type="text"
                                     placeholder="{{ __('general.partner_registration.user_name_english') }}"
                                     name="username_en" class="en-only" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.user_name_arabic') }}</label>
-                                <input type="text" required
+                                <input  type="text"
                                     placeholder="{{ __('general.partner_registration.user_name_arabic') }}"
                                     name="username_ar" class="ar-only" />
-                            </div>
-                            <div class="all-input-failds-partner">
+                            </div> --}}
+                            {{-- <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.email') }}:</label>
-                                <input type="email" required
+                                <input  type="email"
                                     placeholder="{{ __('general.partner_registration.enter_email') }}" name="email" />
-                            </div>
+                            </div> --}}
                             <div class="all-input-failds-partner">
                                 <label for="" class="lab-tst">{{ __('general.partner_registration.city') }}
                                     <span>*</span></label>
-                                <select class="form-select js-example-disabled-results" required
+                                <select class="form-select js-example-disabled-results"
                                     aria-label="{{ __('general.partner_registration.select_city') }}" name="city_id">
-                                    <option>{{ __('general.partner_registration.select_city') }}</option>
+                                    <option value="">{{ __('general.partner_registration.select_city') }}</option>
                                     <option value="{{ $city->id }}">{{ $city->getTranslation('name') }}</option>
                                 </select>
                             </div>
@@ -156,41 +156,81 @@
                                 <h2>{{ __('general.partner_registration.company_information') }}</h2>
                                 <p>{{ __('general.partner_registration.fill_official_data') }}</p>
                             </div>
+
+                            <div class="all-input-failds-partner">
+                                <label for=""
+                                    class="lab-tst">{{ __('general.partner_registration.official_company_name_arabic') }}
+                                    <span>*</span></label>
+
+                                <input type="text"
+                                    placeholder="{{ __('general.partner_registration.official_company_name_arabic') }}"
+                                    name="company_name_ar" class="ar-only" />
+                            </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.official_company_name_english') }}
-                                    <span>*</span></label>
-                                <input required type="text"
-                                    placeholder="{{ __('general.partner_registration.enter_name') }}"
+                                </label>
+                                <input type="text"
+                                    placeholder="{{ __('general.partner_registration.official_company_name_english') }}"
                                     name="company_name_en" class="en-only" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.commercial_register') }}
-                                    <span>*</span></label>
-                                <input required type="text"
+                                    </label>
+                                <input type="text"
                                     placeholder="{{ __('general.partner_registration.enter_commercial_register') }}"
                                     name="commercial_register" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for="" class="lab-tst">{{ __('general.partner_registration.tax_number') }}
-                                    <span>*</span></label>
-                                <input required type="text"
+                                </label>
+                                <input type="text"
                                     placeholder="{{ __('general.partner_registration.enter_tax_number') }}"
-                                    name="tax_number" />
+                                    name="vat_number" />
+                            </div>
+
+                            <div class="all-input-failds-partner">
+                                <label for="" class="lab-tst">{{ __('general.partner_registration.bank') }}
+                                </label>
+                                <select class="form-select js-example-disabled-results"
+                                    aria-label="{{ __('general.partner_registration.select_bank') }}" name="bank_id">
+                                    <option value="">{{ __('general.partner_registration.select_bank') }}</option>
+                                    @foreach ($banks as $bank)
+                                        <option value="{{ $bank->id }}">{{ $bank->getTranslation('name') }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="all-input-failds-partner">
+                                <label for="" class="lab-tst">{{ __('general.partner_registration.iban') }}
+                                    <input type="text"
+                                        placeholder="{{ __('general.partner_registration.enter_iban') }}"
+                                        name="iban" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for="" class="lab-tst">{{ __('general.partner_registration.email') }}
                                     <span>*</span></label>
-                                <input required type="email"
-                                    placeholder="{{ __('general.partner_registration.enter_email') }}"
+                                <input type="email" placeholder="{{ __('general.partner_registration.enter_email') }}"
                                     name="company_email" />
+                            </div>
+                            <div class="all-input-failds-partner">
+                                <label for="" class="lab-tst">{{ __('general.partner_registration.name') }}
+                                    <span>*</span></label>
+                                <input type="name" placeholder="{{ __('general.partner_registration.enter_name') }}"
+                                    name="name" />
+                            </div>
+                            <div class="all-input-failds-partner">
+                                <label for="" class="lab-tst">{{ __('general.partner_registration.position') }}
+                                    <span>*</span></label>
+                                <input type="text"
+                                    placeholder="{{ __('general.partner_registration.enter_position') }}"
+                                    name="position" />
                             </div>
                             <div class="all-input-failds-partner">
                                 <label for=""
                                     class="lab-tst">{{ __('general.partner_registration.phone_number') }}
                                     <span>*</span></label>
-                                <input required type="tel"
+                                <input type="tel"
                                     placeholder="{{ __('general.partner_registration.enter_phone_number') }}"
                                     name="company_phone" />
                             </div>
@@ -229,7 +269,7 @@
                                 <!-- ------- -->
                                 <div class="box-upload-image-company">
                                     <label for="">{{ __('general.partner_registration.vat_registration_number') }}
-                                        <span>*</span></label>
+                                    </label>
                                     <div onclick="UploadImageTowFun();" class="square-upload-image">
                                         <i class="bx bx-cloud-upload"></i>
                                         <h4>
@@ -247,7 +287,7 @@
                                 <!-- ------------- -->
                                 <div class="box-upload-image-company">
                                     <label for="">{{ __('general.partner_registration.iban') }}
-                                        <span>*</span></label>
+                                    </label>
                                     <div onclick="UploadImageThreeFun();" class="square-upload-image">
                                         <i class="bx bx-cloud-upload"></i>
                                         <h4>
@@ -261,6 +301,42 @@
                                     </div>
                                 </div>
                                 <img id="FileImageThree" class="imageAllUpload"
+                                    src="{{ asset('assets/img/blog-1.jpg') }}" alt="" />
+                                <!-- ------------- -->
+                                <div class="box-upload-image-company">
+                                    <label for="">{{ __('general.partner_registration.other_files') }}
+                                        </label>
+                                    <div onclick="UploadImageFourFun();" class="square-upload-image">
+                                        <i class="bx bx-cloud-upload"></i>
+                                        <h4>
+                                            {{ __('general.partner_registration.drop_files_here') }}
+                                        </h4>
+                                        <h6>
+                                            <span>{{ __('general.partner_registration.browse_files_from_computer') }}</span>
+                                        </h6>
+                                        <input type="file" accept="jpg,png,web,jpeg" id="uploadImageFour"
+                                            name="other_files_1" hidden />
+                                    </div>
+                                </div>
+                                <img id="FileImageFour" class="imageAllUpload"
+                                    src="{{ asset('assets/img/blog-1.jpg') }}" alt="" />
+                                <!-- ------------- -->
+                                <div class="box-upload-image-company">
+                                    <label for="">{{ __('general.partner_registration.other_files') }}
+                                        </label>
+                                    <div onclick="UploadImageFiveFun();" class="square-upload-image">
+                                        <i class="bx bx-cloud-upload"></i>
+                                        <h4>
+                                            {{ __('general.partner_registration.drop_files_here') }}
+                                        </h4>
+                                        <h6>
+                                            <span>{{ __('general.partner_registration.browse_files_from_computer') }}</span>
+                                        </h6>
+                                        <input type="file" accept="jpg,png,web,jpeg" id="uploadImageFive"
+                                            name="other_files_2" hidden />
+                                    </div>
+                                </div>
+                                <img id="FileImageFive" class="imageAllUpload"
                                     src="{{ asset('assets/img/blog-1.jpg') }}" alt="" />
                             </div>
                         </div>
@@ -310,9 +386,7 @@
                     let valueStore = this.value.match(regExp);
                     fileNameImageGellry.textContent = valueStore;
                     fileNameImageGellry.classList.toggle("addClassImage");
-                } else {
-                    this.value = "";
-                }
+                } 
             }
         });
 
@@ -344,9 +418,7 @@
                     let valueStore = this.value.match(regExp);
                     fileNameImageGellry2.textContent = valueStore;
                     fileNameImageGellry2.classList.toggle("addClassImage");
-                } else {
-                    this.value = "";
-                }
+                } 
             }
         });
         // -------------------
@@ -376,9 +448,65 @@
                     let valueStore = this.value.match(regExp);
                     fileNameImageGellry3.textContent = valueStore;
                     fileNameImageGellry3.classList.toggle("addClassImage");
-                } else {
-                    this.value = "";
-                }
+                } 
+            }
+        });
+        const fileNameImageGellry4 = document.querySelector("#FileImageFour");
+        const InputJUploadGelery4 = document.querySelector("#uploadImageFour");
+
+        function UploadImageFourFun() {
+            InputJUploadGelery4.click();
+
+        }
+        InputJUploadGelery4.addEventListener("change", function() {
+            const file = this.files[0];
+            if (file && file.type.match('image.*')) {
+
+                const reader = new FileReader();
+                reader.onload = function() {
+                    const result = reader.result;
+                    fileNameImageGellry4.src = result;
+                };
+                // cancelBtn.addEventListener("click", function(){
+                //   img.src = "";
+                // });
+                reader.readAsDataURL(file);
+            }
+            if (this.value) {
+                if (file.type.match('image.*')) {
+                    let valueStore = this.value.match(regExp);
+                    fileNameImageGellry4.textContent = valueStore;
+                    fileNameImageGellry4.classList.toggle("addClassImage");
+                } 
+            }
+        });
+        const fileNameImageGellry5 = document.querySelector("#FileImageFive");
+        const InputJUploadGelery5 = document.querySelector("#uploadImageFive");
+
+        function UploadImageFiveFun() {
+            InputJUploadGelery5.click();
+
+        }
+        InputJUploadGelery5.addEventListener("change", function() {
+            const file = this.files[0];
+            if (file && file.type.match('image.*')) {
+
+                const reader = new FileReader();
+                reader.onload = function() {
+                    const result = reader.result;
+                    fileNameImageGellry5.src = result;
+                };
+                // cancelBtn.addEventListener("click", function(){
+                //   img.src = "";
+                // });
+                reader.readAsDataURL(file);
+            }
+            if (this.value) {
+                if (file.type.match('image.*')) {
+                    let valueStore = this.value.match(regExp);
+                    fileNameImageGellry5.textContent = valueStore;
+                    fileNameImageGellry5.classList.toggle("addClassImage");
+                } 
             }
         });
     </script>
@@ -391,29 +519,55 @@
             var fieldsetElement = $('#fieldset-step-' + fieldset_count);
             var inputElements = fieldsetElement.find('input, select, textarea, [type="file"]');
 
-            inputElements.each(function() {
-                // Check if the element is required and its value is empty
-                if (($(this).val() === '' || ($(this).is('[type="file"]') && !$(this)
-                        .prop('files').length))) {
+            console.log('Validating fieldset:', fieldset_count);
+            console.log('Total input elements found:', inputElements.length);
+
+            // Array of optional inputs
+            var optionalInputs = ['number_of_branches', 'company_name_en', 'commercial_register', 'vat_number', 'iban',
+                'bank_id', 'position', 'vat_no_file' , 'iban_file','other_files_1' , 'other_files_2'
+            ];
+
+            inputElements.each(function(index) {
+                var inputName = $(this).attr('name');
+                var inputValue = $(this).val();
+                var inputType = $(this).attr('type');
+
+                console.log(`Checking input ${index + 1}:`, inputName, 'Type:', inputType, 'Value:', inputValue);
+
+                // Skip validation for optional inputs
+                if (optionalInputs.includes(inputName)) {
+                    console.log('Skipping optional input:', inputName);
+                    return true; // continue to next iteration
+                }
+
+                // Check if the element is empty
+                if (inputValue === '' || ($(this).is('[type="file"]') && !$(this).prop('files').length)) {
+                    console.log('Empty  field found:', inputName);
                     isValid = false;
                     toastr.error(validation_error_msg);
-                    return false;
+                    return false; // break the loop
                 }
-                // Check if the input has type "email" and validate the email format
-                if ($(this).attr('type') === 'email') {
+
+                // Validate email format
+                if (inputType === 'email') {
                     var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                    if (!emailPattern.test($(this).val())) {
+                    if (!emailPattern.test(inputValue)) {
+                        console.log('Invalid email format:', inputName, inputValue);
                         isValid = false;
                         toastr.error(email_validation_error_msg);
-                        return false;
+                        return false; // break the loop
                     }
                 }
             });
+
+            console.log('Fieldset validation result:', isValid ? 'Valid' : 'Invalid');
+
             if (isValid) {
                 if (fieldset_count == 3) {
+                    console.log('Submitting form');
                     $('#msform').submit();
                 } else {
-                    // slide to the next step
+                    console.log('Moving to next step');
                     goSlide(btn);
                 }
             }
@@ -452,6 +606,8 @@
                 //this comes from the custom easing plugin
                 easing: 'easeInOutBack'
             });
+            $disabledResults.select2();
+
         }
 
 

@@ -14,7 +14,7 @@
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page"
-                            href="@if (Route::currentRouteName() != 'home') {{ route('home') }} @else #sec-cover @endif">{{ __('general.header.about') }}</a>
+                            href="{{ route('about') }}">{{ __('general.header.about') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"

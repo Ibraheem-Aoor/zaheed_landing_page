@@ -21,8 +21,10 @@ Route::get('change-lang/{locale}', [LanguageController::class, 'changeLanguage']
 Route::group(['middleware' => 'localization'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('privacy-policy' , [HomeController::class, 'showPrivacyPolicy'])->name('privacy');
+    Route::get('about' , [HomeController::class, 'showAboutPage'])->name('about');
     Route::post('/contact/submit', [HomeController::class, 'submitContactForm'])->name('contact.submit');
     // partner
     Route::get('/become-partner', [PartnerController::class, 'create'])->name('partner.index');
     Route::post('/become-partner-apply', [PartnerController::class, 'applyAsSeller'])->name('partner.apply');
+    Route::get('{slug}' , [HomeController::class, 'showPage'])->name('page');
 });
