@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Jobs\SendEmailJob;
 use App\Models\CommonQuestion;
 use App\Models\Feature;
 use App\Models\LandingPageContact;
@@ -81,9 +82,11 @@ class HomeController extends Controller
     public function submitContactForm(ContactRequest $request)
     {
         try {
-            LandingPageContact::query()->create($request->all());
+            $contact = LandingPageContact::query()->create($request->all());
+            SendEmailJob::dispatch($contact);
             $response = generateResponse(status: true, reset_form: true, redirect: route('home'), message: __('general.response_messages.contact_success'));
         } catch (Throwable $e) {
+            dd($e);
             $response = generateResponse(status: false);
         }
         return response()->json($response);
