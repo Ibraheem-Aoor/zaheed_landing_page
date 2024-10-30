@@ -37,7 +37,7 @@
         <!-- --- End Sec-Cover -->
 
         <!-- --- Start Sec-Client -->
-        <section class="sec-client" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+        <section class="sec-client d-none" id="sec-client" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
             <div class="container">
                 <div class="flex-client-row">
                     @foreach ($brands as $brand_image)
@@ -175,7 +175,7 @@
 
         @if (isset($landing_page_sliders) && !$landing_page_sliders->isEmpty())
             <!-- --- Start Sec Silder 3D  -->
-            <section class="bg-sildeRed" data-aos="zoom-in-up" data-aos-duration="1000">
+            <section class="bg-sildeRed d-none" data-aos="zoom-in-up" data-aos-duration="1000">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @foreach ($landing_page_sliders as $slider)

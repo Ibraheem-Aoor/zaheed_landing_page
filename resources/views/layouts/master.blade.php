@@ -2,7 +2,7 @@
 @php
     $lang = app()->getLocale() == 'sa' ? 'ar' : 'en';
 @endphp
-<html lang="{{ $lang }}" dir="@if (app()->getLocale() == 'sa') ltr @else rtl @endif">
+<html lang="{{ $lang }}" dir="@if (app()->getLocale() == 'sa') rtl @else ltr @endif">
 
 <head>
     <meta charset="UTF-8" />

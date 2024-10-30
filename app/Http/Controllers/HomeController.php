@@ -31,7 +31,7 @@ class HomeController extends Controller
         $data['top_shops'] = $this->getTopShops();
         $data['latest_shops'] = $this->getLatestShops();
         $data['landing_page_sliders'] = DB::table('landing_page_sliders')->get();
-        $data['brands'] = DB::table('brands')->where('logo' , '!=' , null)->where('is_published_for_landing_page' , true)->limit(15)->pluck('logo')->toArray();
+        $data['brands'] = DB::table('brands')->where('logo', '!=', null)->where('is_published_for_landing_page', true)->limit(15)->pluck('logo')->toArray();
         return view('home', $data);
     }
 
@@ -105,7 +105,7 @@ class HomeController extends Controller
      */
     public function showAboutPage()
     {
-        $data['content'] = get_setting('about_us_page' , null  , app()->getLocale());
+        $data['content'] = get_setting('about_us_page', null, app()->getLocale());
         return view('about_us', data: $data);
     }
 
