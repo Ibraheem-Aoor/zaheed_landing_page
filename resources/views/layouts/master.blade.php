@@ -14,7 +14,8 @@
     <title>@yield('meta_title', get_setting('website_name') . ' | ' . get_setting('site_motto'))</title>
     <meta name="robots" content="index, follow">
     <meta name="description" content="@yield('meta_description', get_setting('meta_description'))" />
-    <meta name="keywords" content="@yield('meta_keywords', get_setting('meta_keywords'))">
+    {{-- <meta name="keywords" content="@yield('meta_keywords', get_setting('meta_keywords'))"> --}}
+    <meta name="keywords" content="زهيد,الزهيد,زاهد,زهيدا,تطبيق,تطبيق زهيد,عروض,اسعار منافسه,خصومات,تخفيضات,اسعار خيالية,تحطيم اسعار">
     @yield('meta')
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="{{ get_setting('meta_title')  . ' | ' . get_setting('site_motto')}}">
