@@ -12,11 +12,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item d-none">
                         <a class="nav-link" aria-current="page"
                             href="{{ route('about') }}">{{ __('general.header.about') }}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link"
                             href="{{ route('home') }}#advantages">{{ __('general.header.advantages') }}</a>
                     </li>
@@ -24,7 +24,7 @@
                         <a class="nav-link"
                             href="{{ route('home') }}#sec-product">{{ __('general.header.discounts') }}</a>
                     </li> --}}
-                    <li class="nav-item">
+                    <li class="nav-item d-none">
                         <a class="nav-link" href="{{ route('home') }}#faqs">{{ __('general.header.faq') }}</a>
                     </li>
                     <li class="nav-item">
