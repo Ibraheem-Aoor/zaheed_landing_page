@@ -32,7 +32,7 @@ a{
     align-items: center;
 }
 .headerPage nav .navbar-brand img{
-  width: 93px;
+  width: 130px;
   height: 48px
 }
 .headerPage nav ul li{
@@ -349,7 +349,7 @@ a{
   .image-cover-header{
     position: relative;
     margin-top: 20px;
-    /* 
+    /*
     height: 100%;
     height: 700px; */
   }
@@ -1678,5 +1678,5 @@ border: 1px solid #E1E1E1;
 .w-15, .w-xs-15 { width: 15%!important; }
 .w-20, .w-xs-20 { width: 20%!important; }
 
-/* 
+/*
 
