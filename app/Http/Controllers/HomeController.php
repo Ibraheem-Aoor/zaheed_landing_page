@@ -54,16 +54,20 @@ class HomeController extends Controller
      * Get Top Shops
      */
     public function getTopShops()
-    {
-        return Cache::remember('top_shops', 600, function () {
-            $product_stocks = $this->getTopProducts();
-            $shops = [];
-            for ($i = 0; $i < 4; $i++) {
+{
+    return Cache::remember('top_shops', 600, function () {
+        $product_stocks = $this->getTopProducts();
+        $shops = [];
+        $numOfStocks = count($product_stocks);
+        for ($i = 0; $i < 4; $i++) {
+            if ($i < $numOfStocks && isset($product_stocks[$i]->product->shop)) {
                 array_push($shops, $product_stocks[$i]->product->shop);
             }
-            return $shops;
-        });
-    }
+        }
+        return $shops;
+    });
+}
+
 
     /**
      * get Latest Created Shops

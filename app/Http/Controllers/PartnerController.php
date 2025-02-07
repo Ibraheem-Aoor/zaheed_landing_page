@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use App\Http\Requests\Partner\ApplyPartnerRequest;
 use App\Http\Requests\Partner\CheckStepRequest;
 use App\Models\Category;
@@ -16,6 +17,7 @@ class PartnerController extends Controller
     {
         $data['categories'] =   Category::query()->whereNull('parent_id')->orWhere('parent_id' , 0)->get();
         $data['city'] =   City::query()->find(37444);
+        $data['banks'] = Bank::all();
         return view('partner.create' , $data);
     }
 

@@ -17,10 +17,10 @@
                                 <div class="col-12 col-sm-6 d-flex justify-content-start px-0 ">
                                     <img class="img-fluid me-2" width="140" height="46"
                                         src="{{ asset('assets/img/Mobile app store badge (1).svg') }}" alt=""
-                                        onclick='window.location.href="{{ get_setting('play_store_link') }}"' />
+                                        onclick='window.location.href="https://play.google.com/store/apps/details?id=com.bestcoders.zaheed"' />
                                     <img class="img-fluid" width="140" height="46"
                                         src="{{ asset('assets/img/Mobile app store badge.svg') }}" alt=""
-                                        onclick='window.location.href="{{ get_setting('app_store_link') }}"' />
+                                        onclick='window.location.href="https://apps.apple.com/us/app/zaheed-%D8%B2%D9%87%D9%8A%D8%AF/id6449094027"' />
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
 
         @if (isset($landing_page_sliders) && !$landing_page_sliders->isEmpty())
             <!-- --- Start Sec Silder 3D  -->
-            <section class="bg-sildeRed" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-once="true">
+            <section class="bg-sildeRed d-none" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-once="true">
 
                 <div class="swiper mySwiper">
                     <img class="iphone-cover" src="{{ asset('assets/img/iphone_frame.png') }}">

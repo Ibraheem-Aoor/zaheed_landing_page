@@ -32,24 +32,25 @@ return [
 
     // sec_app_works
     'sec_app_works' => [
-        'title' => 'How Zaheed app works',
+        'title' => 'How the Zaheed App Works',
         'step_1' => [
-            'title' => 'Reviewing offers from store pages.',
-            'description' => 'Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages.',
+            'title' => 'Reviewing Offers from Store Pages',
+            'description' => 'Browse and review offers from various store pages to find the best deals available.',
         ],
         'step_2' => [
-            'title' => 'Choosing products from different stores.',
-            'description' => 'Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages.',
+            'title' => 'Choosing Products from Different Stores',
+            'description' => 'Select products and services from different stores and add them to your cart.',
         ],
         'step_3' => [
-            'title' => 'Direct purchase.',
-            'description' => 'Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages.',
+            'title' => 'Direct Purchase',
+            'description' => 'Complete the purchase by proceeding to checkout and making a payment.',
         ],
         'step_4' => [
-            'title' => 'Receiving the order.',
-            'description' => 'Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages. Reviewing offers from store pages.',
+            'title' => 'Receiving the Order',
+            'description' => 'Receive your order at your specified address within the estimated delivery time.',
         ],
     ],
+
 
 
     // advantages
@@ -119,6 +120,8 @@ return [
         'privacy_policy' => "Privacy Policy",
         'contacts' => "Contacts",
         'copyright' => "&copy; 2023 Saving Solutions Company for information technology.",
+        'terms_conditions' => 'Terms And Conditions',
+        'delete_account' => 'Delete Account',
     ],
 
     'partner_registration' => [
@@ -128,8 +131,8 @@ return [
         'basic_information' => 'Basic Information',
         'store_name_english' => 'Store name in English',
         'store_name_arabic' => 'Store name in Arabic',
-        'category' => 'Category',
-        'select_category' => 'Select a category',
+        'category' => 'Store Type',
+        'select_category' => 'Select a store type',
         'number_of_branches' => 'Number of branches',
         'user_name_english' => 'User Name (English)',
         'user_name_arabic' => 'User Name (Arabic)',
@@ -140,20 +143,26 @@ return [
         'company_information' => 'Company information',
         'fill_official_data' => 'You need to fill official company data',
         'official_company_name_english' => 'Official company name in English',
-        'commercial_register' => 'Commercial register',
+        'official_company_name_arabic' => 'Official company name in Arabic',
+        'commercial_register' => 'Commercial Registration Number',
         'tax_number' => 'Tax number',
         'phone_number' => 'Phone Number',
         'enter_name' => 'Enter Name',
         'enter_number' => 'Enter Number',
-        'enter_commercial_register' => 'Enter commercial register',
+        'enter_commercial_register' => 'Enter commercial registration number',
         'enter_tax_number' => 'Enter tax number',
         'enter_email' => 'Enter email',
+        'enter_contact_name' => 'Enter name',
+        'enter_position' => 'Enter position',
         'enter_phone_number' => 'Enter Phone Number',
+        'contact_name' => 'Name',
+        'position' => 'Position',
         'official_papers' => 'Official Papers',
         'fill_official_company_data' => 'You need to fill official company data',
         'cr_number_of_maroof' => 'CR Number of Maroof',
         'vat_registration_number' => 'VAT Registration Number',
         'iban' => 'IBAN',
+        'enter_iban' => 'Enter IBAN',
         'drop_files_here' => 'Drop your files here',
         'browse_files_from_computer' => 'Browse files from your computer',
         'confirm' => 'Confirm',
@@ -161,8 +170,23 @@ return [
         'user_name_ar' => 'Username in Arabic',
         'user_name_en' => 'Username in English',
         'company_papers' => 'Company Papers',
+        'bank_name' => 'Bank Name',
+        'select_bank' => 'Select bank name',
+        'other_file_1' => 'Other',
+        'other_file_2' => 'Other',
     ],
 
     'please_fill_all_inputs' => 'Please Fill All Inputs',
     'email_invalid' => 'Email Is Invalid',
+
+    'delete_account' => 'Delete Account',
+    'delete_account_warning' => 'Are you sure you want to delete your account? This action cannot be undone, and all your data will be permanently removed.',
+    'confirm_password' => 'Confirm Password',
+    'confirm_password_placeholder' => 'Enter your password to confirm',
+    'cancel' => 'Cancel',
+    'login' => 'Login',
+    'email_or_phone' => 'Email or Phone',
+    'password' => 'Password',
+    'logout' => 'Logout',
+    'get_app' => 'Get App',
 ];
