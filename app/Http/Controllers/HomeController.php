@@ -101,4 +101,15 @@ class HomeController extends Controller
         $data['page'] = Page::where('slug', 'privacy-policy')->first();
         return view('privacy_policy', $data);
     }
+     /**
+     * Shows a page by its slug
+     *
+     * @param string $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function showPage($slug)
+    {
+        $data['page'] = Page::whereSlug($slug)->firstOrFail();
+        return view('page', $data);
+    }
 }

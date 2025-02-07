@@ -37,4 +37,6 @@ Route::group(['middleware' => 'localization'], function () {
 
     Route::get('/delete_account', [AuthController::class, 'showDeleteAccount'])->name('showDeleteAccount');
     Route::delete('/delete-account', [AuthController::class, 'destroy'])->name('delete.account');
+    Route::get('{slug}' , [HomeController::class, 'showPage'])->name('page');
+
 });
