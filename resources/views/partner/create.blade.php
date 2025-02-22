@@ -521,6 +521,7 @@
     <script>
         var validation_error_msg = "{{ __('general.please_fill_all_inputs') }}";
         var email_validation_error_msg = "{{ __('general.email_invalid') }}";
+        var phone_validation_error_msg = "{{ __('general.partner_registration.phone_invalid') }}";
 
         function validateFieldset(btn, fieldset_count) {
             var isValid = true;
@@ -542,6 +543,13 @@
                             toastr.error(email_validation_error_msg);
                             return false;
                         }
+                    }if($(this).attr('type') == 'tel') {
+                        if (!$(this).val().match(/^\+?[1-9]\d{1,14}$/)) {
+                            isValid = false;
+                            toastr.error(phone_validation_error_msg);
+                            return false;
+                        }
+
                     }
                 }
             });
