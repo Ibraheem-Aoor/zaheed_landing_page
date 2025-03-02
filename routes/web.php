@@ -25,6 +25,7 @@ Route::group(['middleware' => 'localization'], function () {
 
         return view('home_old2');
     });
+    Route::get('privacy', [HomeController::class, 'showPrivacyPolicy'])->name('privacy');
     Route::get('privacy-policy', [HomeController::class, 'showPrivacyPolicy'])->name('privacy');
     Route::post('/contact/submit', [HomeController::class, 'submitContactForm'])->name('contact.submit');
     // partner
