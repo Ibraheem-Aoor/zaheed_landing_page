@@ -186,7 +186,7 @@
                                     <div class="box-product-card">
                                         @if ($digitalProduct->thumbnail_path)
                                             <img class="image-product img-fluid"
-                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
                                                 alt="{{ $digitalProduct->getTranslation('name') }}" />
                                         @else
                                             <div class="digital-product-placeholder">
@@ -229,7 +229,7 @@
                                     <div class="box-product-card">
                                         @if ($digitalProduct->thumbnail_path)
                                             <img class="image-product img-fluid"
-                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
                                                 alt="{{ $digitalProduct->getTranslation('name') }}" />
                                         @else
                                             <div class="digital-product-placeholder">
@@ -288,7 +288,7 @@
                                     <div class="box-product-card">
                                         @if ($digitalProduct->thumbnail_path)
                                             <img class="image-product img-fluid"
-                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
                                                 alt="{{ $digitalProduct->getTranslation('name') }}" />
                                         @else
                                             <div class="digital-product-placeholder">
@@ -329,7 +329,7 @@
                                     <div class="box-product-card">
                                         @if ($digitalProduct->thumbnail_path)
                                             <img class="image-product img-fluid"
-                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
                                                 alt="{{ $digitalProduct->getTranslation('name') }}" />
                                         @else
                                             <div class="digital-product-placeholder">

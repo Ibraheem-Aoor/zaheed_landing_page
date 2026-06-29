@@ -277,6 +277,19 @@ if (!function_exists('uploaded_asset')) {
 }
 
 
+if (!function_exists('digital_product_asset')) {
+    function digital_product_asset($path)
+    {
+        if (empty($path)) {
+            return asset('assets/img/placeholder.jpg');
+        }
+        if (str_starts_with($path, 'http')) {
+            return $path;
+        }
+        return 'https://shop.zaheed.sa/public/storage/' . $path;
+    }
+}
+
 
 //get user agent
 if (!function_exists('getUserAgent')) {
