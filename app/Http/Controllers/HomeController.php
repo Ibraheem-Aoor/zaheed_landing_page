@@ -32,7 +32,13 @@ class HomeController extends Controller
         $data['latest_shops'] = $this->getLatestShops();
         $data['landing_page_sliders'] = DB::table('landing_page_sliders')->get();
         $data['brands'] = DB::table('brands')->where('logo' , '!=' , null)->where('is_published_for_landing_page' , true)->limit(15)->pluck('logo')->toArray();
-        $data['digital_products'] = DigitalProduct::query()->where('status' , 'active')->limit(24)->get();
+        $data['digital_products'] = Cache::remember('digital_products', 1800, function () {
+            return DigitalProduct::query()
+                ->select('id', 'name', 'description', 'original_price', 'discounted_price', 'discount_percentage', 'currency', 'thumbnail_path', 'cashback_amount')
+                ->where('status', 'active')
+                ->limit(24)
+                ->get();
+        });
         $data['digital_products_1'] = $data['digital_products']->take(8);
         $data['digital_products_2'] = $data['digital_products']->slice(8)->take(8);
         return view('home', $data);
