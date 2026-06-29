@@ -81,6 +81,11 @@ return [
         'view_all' => 'View All',
     ],
 
+    // sec_digital_products
+    'sec_digital_products' => [
+        'title' => 'Digital Products',
+    ],
+
     // sec product
     'sec_store' => [
         'title' => 'Stores that cooperate with us',

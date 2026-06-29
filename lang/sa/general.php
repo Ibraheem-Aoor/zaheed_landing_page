@@ -84,6 +84,11 @@ return [
         'sec_product.view_all' => 'عرض الكل',
     ],
 
+    // sec_digital_products
+    'sec_digital_products' => [
+        'title' => 'المنتجات الرقمية',
+    ],
+
 
     // sec product
     'sec_store' => [

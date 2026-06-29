@@ -167,7 +167,7 @@
 
 
         <!-- --- Start desktop Product Section -->
-        {{-- <section class="sec-product d-none d-sm-block" id="sec-product">
+        <section class="sec-product d-none d-sm-block" id="sec-product">
             <div class="container-fluid">
                 <div class="flex-title-product">
                     <h4>{{ __('general.sec_product.title') }}</h4>
@@ -181,39 +181,41 @@
                 <div class="row-flex-product ">
                     <div class="card-product activeCardProdut">
                         <div class="row mt-5">
-                            @foreach ($top_product_stokcs_1 as $product_stock)
+                            @foreach ($digital_products_1 as $digitalProduct)
                                 <div class="col-sm-12 col-md-6 col-lg-3">
                                     <div class="box-product-card">
-                                        <img class="image-product img-fluid"
-                                            src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
-                                            alt="" />
+                                        @if ($digitalProduct->thumbnail_path)
+                                            <img class="image-product img-fluid"
+                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
+                                        @else
+                                            <div class="digital-product-placeholder">
+                                                <span class="bx bx-gift"></span>
+                                            </div>
+                                        @endif
                                         <div class="content-product">
-                                            <div class="product-title">
-                                                {{ $product_stock->product?->getTranslation('name') }}</div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
-                                                <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
-                                            </div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
-                                                    alt="" />
-                                                <span>
-                                                    {{ $product_stock->product?->shop?->getAddress() }}
-                                                </span>
-                                            </div>
+                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
+                                            @if ($digitalProduct->description)
+                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
+                                            @endif
                                             <div class="price-product mt-2 mb-1 mt-sm-4 mb-sm-2">
-                                                <div class="discounted-price">
-                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
-                                                    {{ getSystemCurrency() }}
+                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
+                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @else
+                                                    <div class="original-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @endif
+                                            </div>
+                                            @if ($digitalProduct->discount_percentage > 0)
+                                                <div class="pos-cat-product">
+                                                    <span class="bx bx-minus"></span>
+                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
+                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
                                                 </div>
-                                                <div class="original-price">{{ $product_stock->price }}
-                                                    {{ getSystemCurrency() }}</div>
-                                            </div>
-                                            <div class="pos-cat-product">
-                                                <span class="bx bx-minus"></span>
-                                                <span>{{ $product_stock->discount }}</span>
-                                                <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -222,73 +224,41 @@
                     </div>
                     <div class="card-product">
                         <div class="row mt-5">
-                            @foreach ($top_product_stokcs_2 as $product_stock)
-                                @if ($loop->index == 1)
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <div class="box-product-card">
-                                            <div class="bg-soon">
-                                                <img src="{{ asset('assets/img/not-found.png') }}" />
-                                                <h5 data-text="Soon...">
-                                                </h5>
-                                            </div>
-                                            <div class="content-product">
-                                                <div class="product-title">MEN'S T-SHIRT Space print</div>
-                                                <div class="flex-inof-detalis-product">
-                                                    <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
-                                                    <span>_ </span>
-                                                </div>
-                                                <div class="flex-inof-detalis-product">
-                                                    <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}">
-                                                    <span>
-                                                        _
-                                                    </span>
-                                                </div>
-                                                <div class="price-product">
-                                                    <h6>150 SR</h6>
-                                                    <h5>100 SR</h5>
-                                                </div>
-                                                <div class="pos-cat-product">
-                                                    <span class="bx bx-minus"></span>
-                                                    <span>0</span>
-                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}"
-                                                        alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
+                            @foreach ($digital_products_2 as $digitalProduct)
                                 <div class="col-sm-12 col-md-6 col-lg-3">
                                     <div class="box-product-card">
-                                        <img class="image-product img-fluid"
-                                            src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
-                                            alt="" />
+                                        @if ($digitalProduct->thumbnail_path)
+                                            <img class="image-product img-fluid"
+                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
+                                        @else
+                                            <div class="digital-product-placeholder">
+                                                <span class="bx bx-gift"></span>
+                                            </div>
+                                        @endif
                                         <div class="content-product">
-                                            <div class="product-title">
-                                                {{ $product_stock->product?->getTranslation('name') }}</div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
-                                                <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
+                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
+                                            @if ($digitalProduct->description)
+                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
+                                            @endif
+                                            <div class="price-product mt-2 mb-1 mt-sm-4 mb-sm-2">
+                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
+                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @else
+                                                    <div class="original-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @endif
                                             </div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
-                                                    alt="" />
-                                                <span>
-                                                    {{ $product_stock->product?->shop?->getAddress() }}
-                                                </span>
-                                            </div>
-                                            <div class="price-product">
-                                                <div class="discounted-price">
-                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
-                                                    {{ getSystemCurrency() }}
+                                            @if ($digitalProduct->discount_percentage > 0)
+                                                <div class="pos-cat-product">
+                                                    <span class="bx bx-minus"></span>
+                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
+                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
                                                 </div>
-                                                <div class="original-price">{{ $product_stock->price }}
-                                                    {{ getSystemCurrency() }}</div>
-                                            </div>
-                                            <div class="pos-cat-product">
-                                                <span class="bx bx-minus"></span>
-                                                <span>{{ $product_stock->discount }}</span>
-                                                <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -297,7 +267,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         <!-- --- End desktop Product Section -->
 
 
@@ -305,7 +275,7 @@
 
 
         <!-- --- Start mobile Product Section -->
-        {{-- <section class="sec-product d-block d-sm-none" id="sec-product">
+        <section class="sec-product d-block d-sm-none" id="sec-product">
             <div class="container-fluid">
                 <div class="flex-title-product">
                     <h4>{{ __('general.sec_product.title') }}</h4>
@@ -313,112 +283,82 @@
                 <div class="row-flex-product mb ">
                     <div class="card-product activeCardProdut overflow-auto" style="overflow-y: hidden !important;">
                         <div class="row mt-5 flex-nowrap">
-                            @foreach ($top_product_stokcs_1 as $product_stock)
+                            @foreach ($digital_products_1 as $digitalProduct)
                                 <div class="col-sm-6 col-md-6 col-lg-3 w-75">
                                     <div class="box-product-card">
-                                        <img class="image-product img-fluid"
-                                            src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
-                                            alt="" />
+                                        @if ($digitalProduct->thumbnail_path)
+                                            <img class="image-product img-fluid"
+                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
+                                        @else
+                                            <div class="digital-product-placeholder">
+                                                <span class="bx bx-gift"></span>
+                                            </div>
+                                        @endif
                                         <div class="content-product">
-                                            <div class="product-title">
-                                                {{ $product_stock->product?->getTranslation('name') }}</div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
-                                                <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
-                                            </div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
-                                                    alt="" />
-                                                <span>
-                                                    {{ $product_stock->product?->shop?->getAddress() }}
-                                                </span>
-                                            </div>
+                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
+                                            @if ($digitalProduct->description)
+                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
+                                            @endif
                                             <div class="price-product">
-                                                <div class="discounted-price">
-                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
-                                                    {{ getSystemCurrency() }}
+                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
+                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @else
+                                                    <div class="original-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @endif
+                                            </div>
+                                            @if ($digitalProduct->discount_percentage > 0)
+                                                <div class="pos-cat-product">
+                                                    <span class="bx bx-minus"></span>
+                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
+                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
                                                 </div>
-                                                <div class="original-price">{{ $product_stock->price }}
-                                                    {{ getSystemCurrency() }}</div>
-                                            </div>
-                                            <div class="pos-cat-product">
-                                                <span class="bx bx-minus"></span>
-                                                <span>{{ $product_stock->discount }}</span>
-                                                <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                         <div class="row mt-2 flex-nowrap">
-                            @foreach ($top_product_stokcs_2 as $product_stock)
-                                @if ($loop->index == 1)
-                                    <div class="col-sm-6 col-md-6 col-lg-3 w-75">
-                                        <div class="box-product-card">
-                                            <div class="bg-soon">
-                                                <img src="{{ asset('assets/img/not-found.png') }}" />
-                                                <h5 data-text="Soon...">
-                                                </h5>
-                                            </div>
-                                            <div class="content-product">
-                                                <div class="product-title">MEN'S T-SHIRT Space print</div>
-                                                <div class="flex-inof-detalis-product">
-                                                    <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
-                                                    <span>_ </span>
-                                                </div>
-                                                <div class="flex-inof-detalis-product">
-                                                    <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}">
-                                                    <span>
-                                                        _
-                                                    </span>
-                                                </div>
-                                                <div class="price-product">
-                                                    <h6>150 SR</h6>
-                                                    <h5>100 SR</h5>
-                                                </div>
-                                                <div class="pos-cat-product">
-                                                    <span class="bx bx-minus"></span>
-                                                    <span>0</span>
-                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}"
-                                                        alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
+                            @foreach ($digital_products_2 as $digitalProduct)
                                 <div class="col-sm-12 col-md-6 col-lg-3 w-75">
                                     <div class="box-product-card">
-                                        <img class="image-product img-fluid"
-                                            src="{{ uploaded_asset($product_stock->product?->thumbnail_img) }}"
-                                            alt="" />
+                                        @if ($digitalProduct->thumbnail_path)
+                                            <img class="image-product img-fluid"
+                                                src="{{ uploaded_asset($digitalProduct->thumbnail_path) }}"
+                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
+                                        @else
+                                            <div class="digital-product-placeholder">
+                                                <span class="bx bx-gift"></span>
+                                            </div>
+                                        @endif
                                         <div class="content-product">
-                                            <div class="product-title">
-                                                {{ $product_stock->product?->getTranslation('name') }}</div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/FrameStore.svg') }}" alt="" />
-                                                <span>{{ $product_stock->product?->shop?->getTranslation('name') }}</span>
-                                            </div>
-                                            <div class="flex-inof-detalis-product">
-                                                <img src="{{ asset('assets/img/system-uicons_location (1).svg') }}"
-                                                    alt="" />
-                                                <span>
-                                                    {{ $product_stock->product?->shop?->getAddress() }}
-                                                </span>
-                                            </div>
+                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
+                                            @if ($digitalProduct->description)
+                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
+                                            @endif
                                             <div class="price-product">
-                                                <div class="discounted-price">
-                                                    {{ getStockDiscount($product_stock->price, $product_stock->discount, $product_stock->discount_type, true) }}
-                                                    {{ getSystemCurrency() }}
+                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
+                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @else
+                                                    <div class="original-price">{{ $digitalProduct->original_price }}
+                                                        {{ $digitalProduct->currency }}</div>
+                                                @endif
+                                            </div>
+                                            @if ($digitalProduct->discount_percentage > 0)
+                                                <div class="pos-cat-product">
+                                                    <span class="bx bx-minus"></span>
+                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
+                                                    <img src="{{ uploaded_asset('assets/img/Frame 20636.svg') }}" alt="" />
                                                 </div>
-                                                <div class="original-price">{{ $product_stock->price }}
-                                                    {{ getSystemCurrency() }}</div>
-                                            </div>
-                                            <div class="pos-cat-product">
-                                                <span class="bx bx-minus"></span>
-                                                <span>{{ $product_stock->discount }}</span>
-                                                <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -427,7 +367,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         <!-- --- End mobile Product Section -->
 
 
