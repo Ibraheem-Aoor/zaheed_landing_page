@@ -356,7 +356,7 @@
                                                 <div class="pos-cat-product">
                                                     <span class="bx bx-minus"></span>
                                                     <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
-                                                    <img src="{{ uploaded_asset('assets/img/Frame 20636.svg') }}" alt="" />
+                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
                                                 </div>
                                             @endif
                                         </div>
