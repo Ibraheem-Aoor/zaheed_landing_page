@@ -11,6 +11,7 @@ use App\Models\Page;
 use App\Models\Product;
 use App\Models\ProductStock;
 use App\Models\Shop;
+use App\Support\ProductCard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
@@ -35,10 +36,11 @@ class HomeController extends Controller
         $data['digital_products'] = Cache::remember('digital_products', 1800, function () {
             return DigitalProduct::query()
                 ->select('id', 'name', 'description', 'original_price', 'discounted_price', 'discount_percentage', 'currency', 'thumbnail_path', 'cashback_amount')
+                ->with('digitalProductTranslations')
                 ->where('status', 'active')
                 ->limit(24)
                 ->get();
-        });
+        })->map(fn (DigitalProduct $product) => ProductCard::fromDigitalProduct($product));
         $data['digital_products_1'] = $data['digital_products']->take(8);
         $data['digital_products_2'] = $data['digital_products']->slice(8)->take(8);
         return view('home', $data);

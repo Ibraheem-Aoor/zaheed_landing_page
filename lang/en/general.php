@@ -23,6 +23,7 @@ return [
         'arabic' => 'العربية',
         'english' => 'English',
         'getApp' => 'Get App',
+        'products' => 'Products',
     ],
 
 
@@ -80,6 +81,43 @@ return [
         'title' => 'Top discounts for now',
         'view_all' => 'View All',
         'save' => 'Save',
+    ],
+
+    // products_page
+    'products_page' => [
+        'eyebrow' => 'Best deals, all in one place',
+        'title' => 'Products',
+        'subtitle' => 'Browse Zaheed products and handpicked partner offers, with the savings shown upfront on every deal.',
+        'tabs' => [
+            'all' => 'All',
+            'own' => 'Zaheed products',
+            'affiliate' => 'Partner offers',
+        ],
+        'search_placeholder' => 'Search products...',
+        'sort_label' => 'Sort by',
+        'sort' => [
+            'featured' => 'Featured',
+            'savings' => 'Biggest savings',
+            'price_asc' => 'Price: low to high',
+            'price_desc' => 'Price: high to low',
+        ],
+        'results' => '{0} No products|{1} 1 product|[2,*] :count products',
+        'clear_filters' => 'Clear filters',
+        'empty_title' => 'No products found',
+        'empty_text' => 'Try a different search or check back soon for new deals.',
+        'partner_offer' => 'Partner offer',
+        'cta_title' => 'Get every deal in the Zaheed app',
+        'cta_text' => 'Buy our products, track your savings and get notified about new offers.',
+        'cta_button' => 'Download the app',
+    ],
+
+    // download_page
+    'download_page' => [
+        'eyebrow' => 'Available on Android & iOS',
+        'title' => 'Download the Zaheed app',
+        'subtitle' => 'Get our products and the latest deals right on your phone. Choose your store below to get started.',
+        'scan_title' => 'Scan to download',
+        'scan_text' => 'Point your phone camera at the code and we will take you to the right store.',
     ],
 
     // sec_digital_products

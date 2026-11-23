@@ -26,7 +26,7 @@
                             href="@if (Route::currentRouteName() != 'home') {{ route('home') }} @else #sec-cover @endif">{{ __('general.header.about') }}</a>
                     </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href="#advantages">{{ __('general.header.advantages') }}</a>
+            <a class="nav-link" href="@if (Route::currentRouteName() != 'home'){{ route('home') }}@endif#advantages">{{ __('general.header.advantages') }}</a>
           </li>
           {{-- <li class="nav-item">
                         <a class="nav-link"
@@ -35,6 +35,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#faqs">{{ __('general.header.faq') }}</a>
                     </li> --}}
+          @if (config('features.products_page'))
+          <li class="nav-item">
+            <a class="nav-link @if (Route::currentRouteName() == 'products.index') activeListNav @endif"
+              href="{{ route('products.index') }}">{{ __('general.header.products') }}</a>
+          </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link @if (Route::currentRouteName() == 'partner.index') activeListNav @endif"
               href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>
@@ -55,7 +61,7 @@
           </div>
         </form>
         <div class="but-app d-none d-sm-block">
-          <a href="{{ get_setting('app_store_link') }}}}">{{ __('general.get_app') }}</a>
+          <a href="{{ route('app.download') }}">{{ __('general.get_app') }}</a>
         </div>
         <div class="flex">
           <div class="flex-info-header-right">

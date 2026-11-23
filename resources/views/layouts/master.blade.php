@@ -60,7 +60,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v=0.03" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v=0.04" />
     <link rel="stylesheet" href="{{ asset('assets/css/step.css') }}" />
     {{-- arabic css --}}
     <link rel="stylesheet" href="{{ asset('assets/css/media.css') }}" />
@@ -95,7 +95,7 @@
                 </li> --}}
                 <li class="nav-item">
                     <a class="nav-link"
-                        href="#advantages">{{ __('general.header.advantages') }}</a>
+                        href="@if (Route::currentRouteName() != 'home'){{ route('home') }}@endif#advantages">{{ __('general.header.advantages') }}</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link"
@@ -104,6 +104,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#faqs">{{ __('general.header.faq') }}</a>
                 </li> --}}
+                @if (config('features.products_page'))
+                <li class="nav-item">
+                    <a class="nav-link @if (Route::currentRouteName() == 'products.index') activeListNav @endif"
+                    href="{{ route('products.index') }}">{{ __('general.header.products') }}</a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link @if (Route::currentRouteName() == 'partner.index') activeListNav @endif"
                     href="{{ route('partner.index') }}">{{ __('general.header.partner') }}</a>

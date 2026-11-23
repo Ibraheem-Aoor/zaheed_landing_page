@@ -1,0 +1,445 @@
+/* ============ Products page & App download page ============ */
+
+/* ---- Hero ---- */
+.products-hero{
+  position: relative;
+  margin: 40px 0 0;
+  padding: 64px 0 56px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 0, 0, 0.07), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255, 0, 0, 0.05), transparent 40%);
+}
+.products-hero h1{
+  color: #211E1E;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 110%;
+  margin: 16px 0 12px;
+}
+.products-hero p{
+  max-width: 620px;
+  margin: 0 auto;
+  color: #636363;
+  font-size: 18px;
+  line-height: 160%;
+}
+.products-hero-eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 0, 0, 0.08);
+  color: var(--main, #F00);
+  font-size: 14px;
+  font-weight: 700;
+}
+.products-hero-eyebrow .bx{
+  font-size: 18px;
+}
+
+/* ---- Toolbar ---- */
+.products-listing{
+  padding-bottom: 40px;
+}
+.products-toolbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid #E1E1E1;
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0 6px 24px rgba(24, 39, 75, 0.05);
+}
+.products-tabs{
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.products-tabs::-webkit-scrollbar{
+  display: none;
+}
+.products-tab{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: #636363;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease;
+}
+.products-tab:hover{
+  background: #F8F8F8;
+  color: #211E1E;
+}
+.products-tab.active{
+  background: #211E1E;
+  color: #FFF;
+}
+.products-tab-count{
+  min-width: 24px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(33, 30, 30, 0.08);
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+.products-tab.active .products-tab-count{
+  background: var(--main, #F00);
+  color: #FFF;
+}
+
+.products-filters{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+}
+.products-search{
+  position: relative;
+  flex: 0 1 300px;
+  min-width: 0;
+}
+.products-search .bx{
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 14px;
+  transform: translateY(-50%);
+  color: #8A8A8A;
+  font-size: 20px;
+  pointer-events: none;
+}
+.products-search input,
+.products-sort{
+  width: 100%;
+  height: 44px;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: #F8F8F8;
+  color: #211E1E;
+  font-size: 15px;
+  outline: none;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.products-search input{
+  padding-inline: 42px 14px;
+}
+.products-sort{
+  width: auto;
+  padding-inline: 14px 36px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23636363' stroke-width='1.6' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+html[lang="ar"] .products-sort{
+  background-position: left 14px center;
+}
+.products-search input:focus,
+.products-sort:focus{
+  border-color: var(--main, #F00);
+  background-color: #FFF;
+}
+
+.products-results-meta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 4px 0;
+  color: #636363;
+  font-size: 15px;
+  font-weight: 500;
+}
+.products-clear{
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--main, #F00);
+  font-weight: 600;
+  text-decoration: none;
+}
+.products-clear:hover{
+  color: #211E1E;
+}
+
+/* ---- Grid ---- */
+.products-grid{
+  margin-top: 4px;
+}
+
+/* ---- Pagination ---- */
+.products-pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.products-pagination nav > div:first-child{
+  display: none !important; /* hide "Showing x to y" mobile duplicate */
+}
+.products-pagination nav > div:last-child{
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.products-pagination nav p{
+  display: none;
+}
+.products-pagination .pagination{
+  gap: 6px;
+  margin: 0;
+}
+.products-pagination .page-link{
+  min-width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E1E1E1 !important;
+  border-radius: 10px !important;
+  color: #211E1E;
+  font-weight: 600;
+  box-shadow: none !important;
+}
+.products-pagination .page-link:hover{
+  background: #F8F8F8;
+  color: var(--main, #F00);
+}
+.products-pagination .page-item.active .page-link{
+  background: var(--main, #F00);
+  border-color: var(--main, #F00) !important;
+  color: #FFF;
+}
+.products-pagination .page-item.disabled .page-link{
+  color: #B5B5B5;
+  background: #FFF;
+}
+
+/* ---- Empty state ---- */
+.products-empty{
+  margin: 24px 0;
+  padding: 64px 24px;
+  border: 1px dashed #E1E1E1;
+  border-radius: 16px;
+  background: #F8F8F8;
+  text-align: center;
+}
+.products-empty > .bx{
+  font-size: 56px;
+  color: #CCC;
+}
+.products-empty h3{
+  margin: 12px 0 6px;
+  color: #211E1E;
+  font-size: 22px;
+  font-weight: 700;
+}
+.products-empty p{
+  margin: 0 0 20px;
+  color: #636363;
+}
+
+/* ---- Buttons ---- */
+.products-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: #211E1E;
+  color: #FFF;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease;
+}
+.products-btn:hover{
+  background: var(--main, #F00);
+  color: #FFF;
+}
+.products-btn-light{
+  background: #FFF;
+  color: #211E1E;
+}
+.products-btn-light:hover{
+  background: #211E1E;
+  color: #FFF;
+}
+.products-btn .bx{
+  font-size: 20px;
+}
+
+/* ---- App CTA band ---- */
+.products-cta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 48px;
+  padding: 36px 40px;
+  border-radius: 16px;
+  background: url(../img/lines.svg) no-repeat, #E11A2C;
+  background-size: cover;
+  color: #FFF;
+}
+.products-cta h3{
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 700;
+}
+.products-cta p{
+  margin: 0;
+  font-size: 16px;
+  opacity: .9;
+}
+
+/* ---- Download page ---- */
+.download-hero{
+  margin: 40px 0;
+  padding: 48px 0;
+}
+.download-content h1{
+  margin: 16px 0 12px;
+  color: #211E1E;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 110%;
+}
+.download-content > p{
+  max-width: 520px;
+  color: #636363;
+  font-size: 18px;
+  line-height: 160%;
+}
+.download-stores{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.download-stores a{
+  display: inline-block;
+  border-radius: 10px;
+  transition: transform .2s ease;
+}
+.download-stores a:hover{
+  transform: translateY(-3px);
+}
+.download-stores img{
+  width: 160px;
+  height: auto;
+}
+.download-qr{
+  align-items: center;
+  gap: 18px;
+  max-width: 460px;
+  margin-top: 36px;
+  padding: 16px;
+  border: 1px solid #E1E1E1;
+  border-radius: 16px;
+  background: #F8F8F8;
+}
+.download-qr-code{
+  flex-shrink: 0;
+  padding: 8px;
+  border-radius: 12px;
+  background: #FFF;
+  line-height: 0;
+}
+.download-qr h4{
+  margin: 0 0 4px;
+  color: #211E1E;
+  font-size: 18px;
+  font-weight: 700;
+}
+.download-qr p{
+  margin: 0;
+  color: #636363;
+  font-size: 14px;
+  line-height: 150%;
+}
+.download-visual{
+  text-align: center;
+}
+.download-visual img{
+  max-height: 560px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991.98px){
+  .products-filters{
+    flex-basis: 100%;
+    justify-content: stretch;
+  }
+  .products-search{
+    flex: 1 1 auto;
+  }
+  .download-content{
+    text-align: center;
+  }
+  .download-content > p{
+    margin-inline: auto;
+  }
+  .download-stores{
+    justify-content: center;
+  }
+  .download-visual{
+    margin-top: 32px;
+  }
+}
+@media (max-width: 767.98px){
+  .products-hero{
+    margin-top: 20px;
+    padding: 40px 0 32px;
+  }
+  .products-hero h1,
+  .download-content h1{
+    font-size: 34px;
+  }
+  .products-hero p,
+  .download-content > p{
+    font-size: 16px;
+  }
+  .products-toolbar{
+    padding: 10px;
+  }
+  .products-cta{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+  .products-cta h3{
+    font-size: 22px;
+  }
+  .download-hero{
+    margin: 20px 0;
+    padding: 24px 0;
+  }
+  .download-visual img{
+    max-height: 380px;
+  }
+}
+@media (max-width: 575.98px){
+  .products-filters{
+    flex-wrap: wrap;
+  }
+  .products-search,
+  .products-sort{
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}

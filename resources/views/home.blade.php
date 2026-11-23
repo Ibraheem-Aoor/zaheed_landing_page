@@ -181,18 +181,18 @@
                 <div class="row-flex-product ">
                     <div class="card-product activeCardProdut">
                         <div class="row mt-5">
-                            @foreach ($digital_products_1 as $digitalProduct)
+                            @foreach ($digital_products_1 as $product)
                                 <div class="col-sm-12 col-md-6 col-lg-3">
-                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
+                                    @include('partials.digital-product-card', ['product' => $product])
                                 </div>
                             @endforeach
                         </div>
                     </div>
                     <div class="card-product">
                         <div class="row mt-5">
-                            @foreach ($digital_products_2 as $digitalProduct)
+                            @foreach ($digital_products_2 as $product)
                                 <div class="col-sm-12 col-md-6 col-lg-3">
-                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
+                                    @include('partials.digital-product-card', ['product' => $product])
                                 </div>
                             @endforeach
                         </div>
@@ -215,16 +215,16 @@
                 <div class="row-flex-product mb ">
                     <div class="card-product activeCardProdut overflow-auto" style="overflow-y: hidden !important;">
                         <div class="row mt-5 flex-nowrap">
-                            @foreach ($digital_products_1 as $digitalProduct)
+                            @foreach ($digital_products_1 as $product)
                                 <div class="col-sm-6 col-md-6 col-lg-3 w-75">
-                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
+                                    @include('partials.digital-product-card', ['product' => $product])
                                 </div>
                             @endforeach
                         </div>
                         <div class="row mt-2 flex-nowrap">
-                            @foreach ($digital_products_2 as $digitalProduct)
+                            @foreach ($digital_products_2 as $product)
                                 <div class="col-sm-12 col-md-6 col-lg-3 w-75">
-                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
+                                    @include('partials.digital-product-card', ['product' => $product])
                                 </div>
                             @endforeach
                         </div>

@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AppDownloadController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +30,8 @@ Route::group(['middleware' => 'localization'], function () {
     Route::get('privacy', [HomeController::class, 'showPrivacyPolicy'])->name('privacy');
     Route::get('privacy-policy', [HomeController::class, 'showPrivacyPolicy'])->name('privacy');
     Route::post('/contact/submit', [HomeController::class, 'submitContactForm'])->name('contact.submit');
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/download', AppDownloadController::class)->name('app.download');
     // partner
     Route::get('/become-partner', [PartnerController::class, 'create'])->name('partner.index');
     Route::post('/become-partner-apply', [PartnerController::class, 'applyAsSeller'])->name('partner.apply');
