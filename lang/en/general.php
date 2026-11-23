@@ -79,6 +79,7 @@ return [
     'sec_product' => [
         'title' => 'Top discounts for now',
         'view_all' => 'View All',
+        'save' => 'Save',
     ],
 
     // sec_digital_products

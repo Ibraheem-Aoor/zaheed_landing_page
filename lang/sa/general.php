@@ -82,6 +82,7 @@ return [
     'sec_product' => [
         'title' => 'أفضل الخصومات حاليًا',
         'sec_product.view_all' => 'عرض الكل',
+        'save' => 'وفّر',
     ],
 
     // sec_digital_products

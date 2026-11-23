@@ -183,41 +183,7 @@
                         <div class="row mt-5">
                             @foreach ($digital_products_1 as $digitalProduct)
                                 <div class="col-sm-12 col-md-6 col-lg-3">
-                                    <div class="box-product-card">
-                                        @if ($digitalProduct->thumbnail_path)
-                                            <img class="image-product img-fluid"
-                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
-                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
-                                        @else
-                                            <div class="digital-product-placeholder">
-                                                <span class="bx bx-gift"></span>
-                                            </div>
-                                        @endif
-                                        <div class="content-product">
-                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
-                                            @if ($digitalProduct->description)
-                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
-                                            @endif
-                                            <div class="price-product mt-2 mb-1 mt-sm-4 mb-sm-2">
-                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
-                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @else
-                                                    <div class="original-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @endif
-                                            </div>
-                                            @if ($digitalProduct->discount_percentage > 0)
-                                                <div class="pos-cat-product">
-                                                    <span class="bx bx-minus"></span>
-                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
-                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
                                 </div>
                             @endforeach
                         </div>
@@ -226,41 +192,7 @@
                         <div class="row mt-5">
                             @foreach ($digital_products_2 as $digitalProduct)
                                 <div class="col-sm-12 col-md-6 col-lg-3">
-                                    <div class="box-product-card">
-                                        @if ($digitalProduct->thumbnail_path)
-                                            <img class="image-product img-fluid"
-                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
-                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
-                                        @else
-                                            <div class="digital-product-placeholder">
-                                                <span class="bx bx-gift"></span>
-                                            </div>
-                                        @endif
-                                        <div class="content-product">
-                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
-                                            @if ($digitalProduct->description)
-                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
-                                            @endif
-                                            <div class="price-product mt-2 mb-1 mt-sm-4 mb-sm-2">
-                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
-                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @else
-                                                    <div class="original-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @endif
-                                            </div>
-                                            @if ($digitalProduct->discount_percentage > 0)
-                                                <div class="pos-cat-product">
-                                                    <span class="bx bx-minus"></span>
-                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
-                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
                                 </div>
                             @endforeach
                         </div>
@@ -285,82 +217,14 @@
                         <div class="row mt-5 flex-nowrap">
                             @foreach ($digital_products_1 as $digitalProduct)
                                 <div class="col-sm-6 col-md-6 col-lg-3 w-75">
-                                    <div class="box-product-card">
-                                        @if ($digitalProduct->thumbnail_path)
-                                            <img class="image-product img-fluid"
-                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
-                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
-                                        @else
-                                            <div class="digital-product-placeholder">
-                                                <span class="bx bx-gift"></span>
-                                            </div>
-                                        @endif
-                                        <div class="content-product">
-                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
-                                            @if ($digitalProduct->description)
-                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
-                                            @endif
-                                            <div class="price-product">
-                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
-                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @else
-                                                    <div class="original-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @endif
-                                            </div>
-                                            @if ($digitalProduct->discount_percentage > 0)
-                                                <div class="pos-cat-product">
-                                                    <span class="bx bx-minus"></span>
-                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
-                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
                                 </div>
                             @endforeach
                         </div>
                         <div class="row mt-2 flex-nowrap">
                             @foreach ($digital_products_2 as $digitalProduct)
                                 <div class="col-sm-12 col-md-6 col-lg-3 w-75">
-                                    <div class="box-product-card">
-                                        @if ($digitalProduct->thumbnail_path)
-                                            <img class="image-product img-fluid"
-                                                src="{{ digital_product_asset($digitalProduct->thumbnail_path) }}"
-                                                alt="{{ $digitalProduct->getTranslation('name') }}" />
-                                        @else
-                                            <div class="digital-product-placeholder">
-                                                <span class="bx bx-gift"></span>
-                                            </div>
-                                        @endif
-                                        <div class="content-product">
-                                            <div class="product-title">{{ $digitalProduct->getTranslation('name') }}</div>
-                                            @if ($digitalProduct->description)
-                                                <p class="digital-product-desc">{{ ($digitalProduct->getTranslation('description')) }}</p>
-                                            @endif
-                                            <div class="price-product">
-                                                @if ($digitalProduct->discounted_price && $digitalProduct->discounted_price < $digitalProduct->original_price)
-                                                    <div class="discounted-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                    <div class="original-price">{{ $digitalProduct->discounted_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @else
-                                                    <div class="original-price">{{ $digitalProduct->original_price }}
-                                                        {{ $digitalProduct->currency }}</div>
-                                                @endif
-                                            </div>
-                                            @if ($digitalProduct->discount_percentage > 0)
-                                                <div class="pos-cat-product">
-                                                    <span class="bx bx-minus"></span>
-                                                    <span>{{ intval($digitalProduct->discount_percentage) }}%</span>
-                                                    <img src="{{ asset('assets/img/Frame 20636.svg') }}" alt="" />
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    @include('partials.digital-product-card', ['digitalProduct' => $digitalProduct])
                                 </div>
                             @endforeach
                         </div>

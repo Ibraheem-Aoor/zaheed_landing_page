@@ -236,10 +236,10 @@
         flex-direction: row-reverse !important;
     }
 
-    .price-product .discounted-price {
+    .price-product .price-old {
         font-size: 14px !important;
     }
-    .price-product .original-price {
+    .price-product .price-now {
         font-size: 20px !important;
     }
 
@@ -430,18 +430,18 @@
         flex-direction: column-reverse !important;
     }
 
-    .price-product .discounted-price {
+    .price-product .price-old {
         font-size: 14px !important;
     }
 
-    .price-product .original-price {
+    .price-product .price-now {
         font-size: 20px !important;
     }
 
-    .price-product .discounted-price {
+    .price-product .price-old {
         font-size: 14px !important;
     }
-    .price-product .original-price {
+    .price-product .price-now {
         font-size: 20px !important;
     }
 
